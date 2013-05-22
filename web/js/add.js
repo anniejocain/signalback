@@ -16,7 +16,7 @@ $(document).ready(function() {
 	
 	$('#bookmarklet-name').keyup(function() {
 	  var name = $(this).val();
-	  var bookmarklet = "javascript:(function(){%20window.open(%22http://librarylab.law.harvard.edu/dev/annie/roundup/add?link=%22+encodeURIComponent(%20location.href)+%22&title=%22+encodeURIComponent(document.title)+%22&name=" + name + "%22);%20})();"
+	  var bookmarklet = "javascript:(function(){%20window.open(%22" + web_base + "add?link=%22+encodeURIComponent(%20location.href)+%22&title=%22+encodeURIComponent(document.title)+%22&name=" + name + "%22);%20})();"
 	  $("#bookmarklet").attr('href', bookmarklet);
 	});
 	

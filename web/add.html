@@ -38,7 +38,7 @@ var web_base = '<?php echo $web_base ?>';
         <div id="get" class="collapse in">
           <h4>Drag this bookmarklet</h4>
           <form class="form-inline">
-            <p><input type="text" class="input-small" placeholder="Your name" id="bookmarklet-name"> <a id="bookmarklet" class="btn" href="javascript:(function(){%20window.open(%22http://librarylab.law.harvard.edu/dev/annie/roundup/add?link=%22+encodeURIComponent(%20location.href)+%22&title=%22+encodeURIComponent(document.title)+%22&name=%22);%20})();">Roundup</a></p>
+            <p><input type="text" class="input-small" placeholder="Your name" id="bookmarklet-name"> <a id="bookmarklet" class="btn" href="javascript:(function(){%20window.open(%22<?php echo $web_base ?>add?link=%22+encodeURIComponent(%20location.href)+%22&title=%22+encodeURIComponent(document.title)+%22&name=%22);%20})();">Roundup</a></p>
           </form>
           <h4>Into your browser toolbar</h4>
         </div>
