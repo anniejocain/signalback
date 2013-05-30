@@ -2,7 +2,7 @@
 
 $f3=require('lib/base.php');
 
-$f3->config('api/config.ini');
+$f3->config('etc/config.ini');
 
 $f3->set('AUTOLOAD','api/; web/;');
 
