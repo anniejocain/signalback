@@ -94,6 +94,7 @@ class Item extends Controller {
       $db_host = $f3->get('DB_HOST');
       $wp_token = $f3->get("WP_TOKEN");
       $wp_blog = $f3->get("WP_BLOG");
+      $blog_min = $f3->get("BLOG_MIN");
       
       $link_list = '';
       
@@ -106,7 +107,7 @@ class Item extends Controller {
       $query = "SELECT * FROM `roundup` WHERE `posted` = 0 ORDER BY added DESC";
       $result = mysql_query($query);
       $num_rows = mysql_num_rows($result);
-      if($num_rows > 4) {
+      if($num_rows >= $blog_min) {
         while ($row = mysql_fetch_array($result)) {
           $link_list .= '<p><a href="' . $row[1] . '">' . $row[2] . '</a>';
           if(strlen($row[3]) > 0)
@@ -134,7 +135,8 @@ class Item extends Controller {
               'title' => $title,
               'content' => $link_list,
               'categories' => 'roundup',
-              'status' => 'draft',
+              //'status' => 'draft',
+              'status' => 'publish',
             )
           ),
         ),
