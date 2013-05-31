@@ -18,8 +18,10 @@ var web_base = '<?php echo $web_base ?>';
 <body>
 	<div class="container">
 	  <div class="row">
+	    <div class="span12">
+	      <h1>Roundup</h1>
+	    </div>
 	    <div class="span4">
-        <h1>Roundup</h1>
         <form id="share-form">
           <p>title<br /><input id="title" class="input-block-level" type="text" value="<?php echo $title ?>" /></p>
           <p>url<br /><input id="url" class="input-block-level" type="text" value="<?php echo $link ?>" /></p>
@@ -42,6 +44,10 @@ var web_base = '<?php echo $web_base ?>';
           </form>
           <h4>Into your browser toolbar</h4>
         </div>
+      </div>
+      <div class="span5 offset2">
+        <h4>Patiently waiting to be rounded up</h4>
+        <div id="hopper"></div>
       </div>
 	  </div>
 	</div>

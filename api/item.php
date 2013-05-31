@@ -18,7 +18,7 @@ class Item extends Controller {
       mysql_select_db($db)
       or die ("Could not connect to database");
       
-      $query = "SELECT * FROM `roundup` LIMIT 0,5";
+      $query = "SELECT * FROM `roundup` WHERE `posted` = 0 ORDER BY added DESC";
       $result = mysql_query($query);
       while ($row = mysql_fetch_array($result))
       {
@@ -40,8 +40,8 @@ class Item extends Controller {
     function new_item() {
       $f3=$this->framework;
       $link = $_REQUEST['link'];
-      $title = $_REQUEST['title'];
-      $description = $_REQUEST['description'];
+      $title = addslashes($_REQUEST['title']);
+      $description = addslashes($_REQUEST['description']);
       $creator = $_REQUEST['creator'];
       
       $db = $f3->get('DB');
@@ -110,8 +110,8 @@ class Item extends Controller {
       if($num_rows >= $blog_min) {
         while ($row = mysql_fetch_array($result)) {
           $link_list .= '<p><a href="' . $row[1] . '">' . $row[2] . '</a>';
-          if(strlen($row[3]) > 0)
-            $link_list .= '<br>' . $row[3] . ' - ' . $row[4] . '</p>';
+          if(strlen($row[4]) > 0)
+            $link_list .= '<br>' . $row[3] . '<small> - ' . $row[4] . '</small></p>';
           else  
             $link_list .= '</p>';
         }

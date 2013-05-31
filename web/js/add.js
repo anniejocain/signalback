@@ -1,15 +1,17 @@
+var item_url = web_base + "api/item";
 $(document).ready(function() {
+  showHopper();
   $('#share-form').submit(function() {
-    var post_url = web_base + "api/item";
     var title = $('#title').val();
     var url = $('#url').val();
     var creator = $('#creator').val();
     var description = $('#description').val();
-    $.post(post_url, {title: title, creator: creator, link: url, description: description}, function(data) {
+    $.post(item_url, {title: title, creator: creator, link: url, description: description}, function(data) {
       $('#share-form input, #share-form textarea').each(function() {
             $(this).val('');
       });
       $('#result').html('<h4>' + data.response + '</h4>');
+      showHopper();
     });
   return false;	
 	});
@@ -22,3 +24,15 @@ $(document).ready(function() {
 	
 	$('#get').collapse("hide");
 });
+
+function showHopper() {
+  $.getJSON(item_url + '/recent?callback=?', function(data) {
+    var items = [];
+    $.each(data, function(key, val) {
+      items.push('<p><a href="' + val.link + '">' + val.title + '</a><br>' + val.description + '<br><small>- ' + val.creator + '</small>');
+    });
+    var ul = items.join('');
+    
+    $('#hopper').html(ul);
+});
+}
