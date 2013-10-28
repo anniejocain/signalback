@@ -27,7 +27,7 @@ var web_base = '<?php echo $web_base ?>';
           <p>url<br /><input id="url" class="input-block-level" type="text" value="<?php echo $link ?>" /></p>
           <p>name <br /><input id="creator" value="<?php echo $name ?>" class="input-block-level" type="text" /></p>
           <p>notes<br/>
-          <textarea id="description" class="input-block-level"></textarea>
+          <textarea rows="3" id="description" class="input-block-level checkMax" maxlength="117"></textarea>
           <p><button type="submit" class="btn btn-block btn-info">POST</button></p>
         </form>
         

@@ -1,5 +1,7 @@
 var item_url = web_base + "api/item";
 $(document).ready(function() {
+  setMaxLength();
+  $("textarea.checkMax").bind("click mouseover keyup change", function(){checkMaxLength(this.id); } )
   showHopper();
   $('#share-form').submit(function() {
     var title = $('#title').val();
@@ -35,4 +37,21 @@ function showHopper() {
     
     $('#hopper').html(ul);
 });
+}
+
+function setMaxLength() {
+  $("textarea.checkMax").each(function(i){
+    intMax = $(this).attr("maxlength");
+    $(this).after("<div><span id='"+this.id+"Counter'>"+intMax+"</span> remaining</div>");
+  });
+}
+
+function checkMaxLength(strID){
+  intCount = $("#"+strID).val().length;
+  intMax = $("#"+strID).attr("maxlength");
+  strID = "#"+strID+"Counter";
+  $(strID).text(parseInt(intMax) - parseInt(intCount));
+  if (intCount < (intMax * .8)) {$(strID).css("color", "#006600"); } //Good
+  if (intCount > (intMax * .8)) { $(strID).css("color", "#FF9933"); } //Warning at 80%
+  if (intCount > (intMax)) { $(strID).text(0).css("color", "#990000"); } //Over
 }
