@@ -3,20 +3,22 @@ $(document).ready(function() {
   setMaxLength();
   $("textarea.checkMax").bind("click mouseover keyup change", function(){checkMaxLength(this.id); } )
   showHopper();
-  $('#share-form').submit(function() {
-    var title = $('#title').val();
-    var url = $('#url').val();
-    var creator = $('#creator').val();
-    var description = $('#description').val();
-    $.post(item_url, {title: title, creator: creator, link: url, description: description}, function(data) {
-      $('#share-form input, #share-form textarea').each(function() {
-            $(this).val('');
+  $("#share-form").validate({
+    submitHandler: function(form) {
+      var title = $('#title').val();
+      var url = $('#url').val();
+      var creator = $('#creator').val();
+      var description = $('#description').val();
+      $.post(item_url, {title: title, creator: creator, link: url, description: description}, function(data) {
+        $('#share-form input, #share-form textarea').each(function() {
+              $(this).val('');
+        });
+        $('#result').html('<h4>' + data.response + '</h4>');
+        showHopper();
       });
-      $('#result').html('<h4>' + data.response + '</h4>');
-      showHopper();
-    });
-  return false;	
-	});
+      return false;	
+    }
+   });
 	
 	$('#bookmarklet-name').keyup(function() {
 	  var name = $(this).val();
