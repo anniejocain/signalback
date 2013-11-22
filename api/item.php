@@ -66,7 +66,7 @@ class Item extends Controller {
 
       $content = $connection->get('account/verify_credentials');
       
-      $description = mb_substr($description, 0, 117);
+      $description = stripslashes(mb_substr($description, 0, 117));
         
       $message = "$description $link";
         
