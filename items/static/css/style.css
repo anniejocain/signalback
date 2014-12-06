@@ -163,6 +163,10 @@ body {
     border-bottom: 8px solid #ddd;
 }
 
+#gallery-container .selectable-image:hover {
+    border-bottom: 8px solid #b9e3ff;
+}
+
 #gallery-container #image-placeholder {
     height: 200px;
     width: 200px;

@@ -23,9 +23,10 @@ $(document).ready(function() {
     });
     
     
-    $(document).on('click', '.selectable-image', function() {
-        console.log('image selected');
-        $('.selected_image').attr('value', value.id);
+    $(document).on('click', '.gallery-image', function() {
+        $('#image-rep').attr('value', this.id);
+		$('.gallery-image').addClass('selectable-image').removeClass('selected-image');
+		$(this).removeClass('selectable-image').addClass('selected-image');
     })
     
 });
@@ -69,7 +70,7 @@ function check_status() {
                 // TODO: we shouldn't be compiling this template every time
                 var source = $("#image-template").html();
                 var template = Handlebars.compile(source);
-                var new_image = $(template({'path': value.path})).hide().fadeIn();
+                var new_image = $(template({'path': value.path, 'id': value.id})).hide().fadeIn();
                 
                 if (displayed_image_ids.length == 1) {
                     new_image.addClass('selected-image');
