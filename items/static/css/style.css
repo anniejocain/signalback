@@ -185,8 +185,34 @@ body {
 
 /* Add item end */
 
+/* Landing start */
+
+#logo {
+	width: 500px;
+	margin: 0 auto;
+}
+
+.ill-placeholder {
+	width: 400px;
+	height: 300px;
+	border: 20px solid #f0f0f0;
+}
+
+.landing .row {
+	margin-top: 80px;
+}
+
+.landing h3 {
+	margin-top: 120px;
+	margin-bottom: 20px;
+}
+
+/* Landing end */
+
 .bookmarklet-denied {
     font-size:224px;
     color:#fffeb3;
     text-align:center;
 }
+
+
