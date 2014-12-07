@@ -13,6 +13,9 @@
                 <form method="post" action="">
                     {% csrf_token %}
                     {{ add_form|as_bootstrap }}
+					<label for="image-rep" class="control-label">
+						Image
+					</label>
 					<input class="" id="image-rep" name="image-rep" value="" type="hidden" />					
 		            <div id="gallery-container">
 		            	<div id="image-placeholder">

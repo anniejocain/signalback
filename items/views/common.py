@@ -22,10 +22,14 @@ logger = logging.getLogger(__name__)
 def landing(request):
     """Our main landing page"""
 
-    context = {}
-               
-    context = RequestContext(request, context)
+    if request.user.is_authenticated():
+        org = Organization.objects.get(user=request.user)
+        context = {'org_slug': org.slug}
+        context = RequestContext(request, context)
+        
+        return render_to_response('items.html', context)
     
+    context = RequestContext(request, {})
     return render_to_response('landing.html', context)
     
     
