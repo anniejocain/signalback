@@ -26,6 +26,13 @@ body {
     border-radius:2px;
 }
 
+.navbar.landing-navbar {
+	background-color: #fff;
+	border: none;
+	box-shadow: none;
+	margin-bottom: 0;
+}
+
 .form-pull-down {
     margin-top:25px;
 }
@@ -188,12 +195,13 @@ body {
 /* Landing start */
 
 #logo {
-	margin: 30px auto 0 auto;
+	margin: 0px auto 0 auto;
 }
 
 .landing .tagline {
 	margin-top: 20px;
 	margin-bottom: 60px;
+	font-size: 22px;
 }
 
 .ill-placeholder {
@@ -207,10 +215,26 @@ body {
 }
 
 .landing .btn {
-	margin-top: 40px;
+	margin-top: 20px;
+	font-size: 17px;
 }
 
-.landing .footer h3 {
+.landing p {
+	font-weight: 300;
+	font-size: 19px;
+	color: #777;
+}
+
+.landing h3 {
+	color: #555;
+	text-transform: none;
+	margin-bottom: 20px;
+	margin-top: 10px;
+	font-size: 28px;
+
+}
+
+.landing .footer .tagline {
 	margin-top: 120px;
 	margin-bottom: 20px;
 }
