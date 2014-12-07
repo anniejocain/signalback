@@ -27,10 +27,12 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-default" role="navigation">
+	  
+	  {% if request.get_full_path != '/'%}
+<nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+    <div class="navbar-navbar">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -65,6 +67,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+		{% endif %}
     {% block content %}{% endblock content %}
     
     <script src="{{ STATIC_PREFIX }}js/jquery-1.11.1.min.js"></script>
