@@ -1,7 +1,6 @@
 from fabric.api import local
 import random
-from signalback.local_settings import SECRET_KEY, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_STORAGE_BUCKET_NAME
-
+from signalback.local_settings import SECRET_KEY, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_STORAGE_BUCKET_NAME, EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_USE_TLS, EMAIL_USE_SSL
 
 def push_to_heroku():
     """
@@ -23,7 +22,13 @@ def push_to_heroku():
         myfile.write("\nAWS_STORAGE_BUCKET_NAME='%s'" % AWS_STORAGE_BUCKET_NAME)
         myfile.write("\nS3_URL='http://s3.amazonaws.com/%s/'" % AWS_STORAGE_BUCKET_NAME)
         myfile.write("\nSTATIC_URL=S3_URL")
-        
+
+        myfile.write("\nEMAIL_HOST='%s'" % EMAIL_HOST)
+        myfile.write("\nEMAIL_PORT=%s" % EMAIL_PORT)
+        myfile.write("\nEMAIL_HOST_USER='%s'" % EMAIL_HOST_USER)
+        myfile.write("\nEMAIL_HOST_PASSWORD='%s'" % EMAIL_HOST_PASSWORD)
+        myfile.write("\nEMAIL_USE_TLS=%s" % EMAIL_USE_TLS)
+        myfile.write("\nEMAIL_USE_SSL=%s" % EMAIL_USE_SSL)
         
     # Toss our temp settings in git and push to heroku
     local("git commit -a -m 'heroku build'")

@@ -12,6 +12,8 @@ INSTALLED_APPS += (
     'storages',
 )
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 # this goes away when we switch to cleardb?
 DATABASES['default'] = dj_database_url.config()
 
