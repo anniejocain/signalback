@@ -90,3 +90,5 @@ LOGIN_REDIRECT_URL = '/dashboard/'
 
 # Celery/Broker stuff
 BROKER_URL = 'django://'
+
+DEFAULT_FROM_EMAIL = 'info@signalback.com'
