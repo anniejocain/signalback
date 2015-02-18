@@ -1,99 +1,146 @@
 {% extends "layouts/base.html" %}
-{% load static bootstrap_tags %}
+{% load static bootstrap_tags compressed %}
 {% get_static_prefix as STATIC_PREFIX %}
 
 {% block title %}SignalBack{% endblock title %}
 
+{% block styles %}
+	{% compressed_css 'landing' %}
+{% endblock styles %}
+
 {% block content %}
 
-    <div class="container landing">
-        <div class="row logo-container">
-            <div class="col-xs-9 col-centered">
-				<div class="row">
-					<div class="col-sm-8">
-						<img src="{{ STATIC_PREFIX }}img/logo.jpg" class="img-responsive" id="logo">
+    <div class="landing">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 center-block">
+					<img src="{{ STATIC_PREFIX }}img/logo.png" class="img-responsive center-block" id="logo">
+					<p id="tagline" class="text-center center-block">SignalBack helps collaborators collect and share their web discoveries.</p>
+	            </div> <!-- col -->
+			</div> <!-- row -->
+		</div> <!-- container -->
+
+
+		<div class="container-fluid">
+		    <div class="row dividing-stripe">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-md-12">
+							<p>How it works</p>
+		                </div>
 		            </div>
-					<div class="col-sm-4">
-						<p class="text-center">Teams use SignalBack to collect and share their web discoveries.</h3>
-						<button type="button" class="btn btn-primary center-block">Try SignalBack</button>
+		        </div>
+		    </div> <!-- row -->
+		</div> <!-- container-fluid -->
+
+		<div class="container-fluid">
+		    <div class="row zebra-stripe">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-5">
+							<img src="{{ STATIC_PREFIX }}img/big-three.png"  id="steps-image" class="center-block img-responsive">
+							<p id="steps-desc" class="center-block">Easy Steps</p>
+						</div>
+						<div class="col-sm-7">
+							<div class="row">
+					            <div class="col-xs-12">
+									<p class="step-body"><span class="step-title">One</span> The first time you use SignalBack you'll add the SignalBack button to your browser. Your collaborators do the same.</p>
+					            </div>
+							</div> <!-- row -->
+
+							<div class="row">
+								<div class="col-xs-12">
+									<p class="step-body"><span class="step-title">Two</span> When you're browsing the Web and discover a cool link, click on the SignalBack button. A snapshot of your link will be added to a stream you share with your collaborators.</p>
+					            </div>	
+							</div> <!-- row -->
+
+							<div class="row">
+								<div class="col-xs-12">
+									<p class="step-body"><span class="step-title">Three</span> SignalBack automatically pushes links added to your stream out to Twitter, your blog, and just about anywhere else you choose using the SignalBack API.</p>
+					            </div>
+							</div> <!-- row -->
+						</div> <!-- col -->
+					</div> <!-- row -->
+				</div> <!-- container -->		
+			</div> <!-- zebra row -->
+		</div> <!-- container-fluid -->
+
+
+		<div class="container-fluid">
+		    <div class="row dividing-stripe">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-md-12">
+							<p>Why you need it</p>
+		                </div>
 		            </div>
+		        </div>
+		    </div> <!-- row -->
+		</div> <!-- container-fluid -->	
+
+		<div class="container need-it">
+			<div class="row pagination-centered">
+				<div class="col-sm-5">
+					<p class="desc-title">Automate your social web</p>
+					<p class="step-body">SignalBack spreads the social media workload across your team. Your social accounts stay fresh and your community stays engaged.</p>
 				</div>
-			</div> <!-- column container -->
-		</div> <!-- row -->
+	            <div class="col-sm-7">
+					<img src="{{ STATIC_PREFIX }}img/paperplanes.jpg" class="img-responsive paperplanes">
+	            </div>
+			</div> <!-- row -->
 		
-        <div class="row">
-            <div class="col-xs-9 col-centered">
-				<div class="row">
-					<div class="col-sm-6">
-						<h3>Remarkably simple</h3>
-						<p>Use the SignalBack browser button when you find a link worth sharing. One click is all it takes to "signal back" to your party.</p>
-		            </div>
-		            <div class="col-sm-6">
-						<img src="{{ STATIC_PREFIX }}img/paperplanes.jpg" class="img-responsive paperplanes">
-		            </div>
-				</div> <!-- nested row -->
-			</div> <!-- column container -->
-		</div> <!-- row -->
+			<div class="row">
+	            <div class="col-sm-7">
+					<img src="{{ STATIC_PREFIX }}img/boombox.png" class="img-responsive paperplanes">
+	            </div>
+				<div class="col-sm-5">
+					<p class="desc-title">Control and ownership</p>
+					<p class="step-body">Privacy settings are remarkably clear in SignalBack. You own your data and you choose how to share it.</p>
+	            </div>
 
-
-        <div class="row">
-            <div class="col-xs-9 col-centered">
-				<div class="row">
-		            <div class="col-sm-6">
-						<img src="{{ STATIC_PREFIX }}img/boombox.png" class="img-responsive boombox">
-		            </div>
-					<div class="col-sm-6">
-						<h3>Automate your social web</h3>
-						<p>Turn up the volume and push your discoveries out to Twitter, your blog, and beyond using the API.</p>
-		            </div>
-				</div> <!-- nested row -->
-			</div> <!-- column container -->
-		</div> <!-- row -->
+			</div> <!-- row -->
 		
+			<div class="row">
+	            <div class="col-sm-5">
+					<p class="desc-title">Build your culture</p>
+					<p class="step-body">SignalBack brings you and your collaborators together to discuss common interests. Items in the stream spark discussions in the hallway. Conversation creates culture.</p>
+	            </div>
+				<div class="col-sm-7">
+					<img src="{{ STATIC_PREFIX }}img/picnic-table.png" class="img-responsive picnic-table">
+	            </div>
+			</div> <!-- row -->
+		</div> <!-- container -->
 		
-        <div class="row">
-            <div class="col-xs-9 col-centered">
-				<div class="row">
-		            <div class="col-sm-6">
-						<h3>Create culture</h3>
-						<p>SignalBack brings you and your collaborators together to discuss common interests. Conversation creates culture.</p>
+		<div class="container-fluid">
+		    <div class="row dividing-stripe">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-md-12">
+							<p>Start using it right now</p>
+		                </div>
 		            </div>
-					<div class="col-sm-6">
-						<img src="{{ STATIC_PREFIX }}img/picnic-table.png" class="img-responsive picnic-table">
-		            </div>
-				</div> <!-- nested row -->
-			</div> <!-- column container -->
-		</div> <!-- row -->
+		        </div>
+		    </div> <!-- row -->
+		</div> <!-- container-fluid -->
+	
+		<div class="container-fluid">
+		    <div class="row zebra-stripe">
+		        <div class="container">
+					<div class="row">
+			            <div class="col-sm-6">
+							<p class="desc-title">Free and easy setup</p>
+							<p class="step-body">Use SignalBack for 30 days for zero dollars. After that, it's $5 per team member per month. Libraries are free for life.</p>
+							<button type="button" class="btn btn-primary" id="try-button">Try SignalBack</button>
+			            </div>
+						<div class="col-sm-6">
+							<img src="{{ STATIC_PREFIX }}img/change.png" class="img-responsive change">
+			            </div>
+					</div> <!-- row -->
+				</div> <!-- containter -->
+			</div> <!-- zebra row -->
+		</div> <!-- container-fluid -->
 		
-		
-        <div class="row">
-            <div class="col-xs-9 col-centered">
-				<div class="row">
-					<div class="col-sm-6">
-						<img src="{{ STATIC_PREFIX }}img/change.png" class="img-responsive change">
-		            </div>
-		            <div class="col-sm-6">
-						<h3>Try it for free</h3>
-						<p>Use SignalBack for 30 days for zero dollars. After that, it's $5 per team member per month. Libraries are free for life.</p>
-						<button type="button" class="btn btn-primary">Try SignalBack</button>
-		            </div>
-				</div> <!-- nested row -->
-			</div> <!-- column container -->
-		</div> <!-- row -->
-
-
-        <div class="row">
-            <div class="col-xs-9 col-centered">
-				<div class="row">
-					<div class="col-xs-12">
-						<p class="text-center tagline">Share your links. Keep your social web fresh. Build your culture.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		
-    </div><!-- /.container -->
+	</div> <!-- landing -->
 
 
 {% endblock content %}

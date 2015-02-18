@@ -15,9 +15,13 @@
 
     <title>{% block title %}Signal Back{% endblock title %}</title>
 
-    {% block styles %}<link rel="stylesheet" href="{{ STATIC_PREFIX }}css/bootstrap.min.css" type="text/css" />
+    {% block styles %}
+	
+	<!--<link rel="stylesheet" href="{{ STATIC_PREFIX }}css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/bootstrap-theme.css" type="text/css" />
-    <link rel="stylesheet" media="all" href="{{ STATIC_PREFIX }}css/style.css" />{% endblock styles %}
+    <link rel="stylesheet" media="all" href="{{ STATIC_PREFIX }}css/style.css" />-->
+		
+		{% endblock styles %}
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,6 +52,7 @@
 	            <li><a href="{% url 'dashboard_landing' %}" id="nav-button">Dashboard</a></li>
 			{% else %}
 			    <li><a href="{% url 'auth_login' %}">Log in</a></li>
+										<button type="button" class="btn btn-primary center-block">Try SignalBack</button>
 			{% endif %}
 			{% comment %}
 	        <li class="dropdown">

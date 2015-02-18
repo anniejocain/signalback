@@ -3,3 +3,4 @@ srv/static
 *.pyc
 celerybeat-schedule.db
 signalback/local_settings.py
+.DS_Store

@@ -1,322 +1,109 @@
-h1, .h1 {
-    font-size:30px;
-}
-
-h2, .h2 {
-    font-size:24px;
-}
-
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\000036}}
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
-    color:#ab76e8;
-    text-transform:uppercase;
-}
+  font-family: 'Montserrat', sans-serif;
+  color: #ab76e8;
+  text-transform: uppercase; }
 
-body {
-    color:#666;
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000312}}
+  body {
+    color: #666;
     font-family: 'Lato', sans-serif;
-    font-size:18px;
+    font-size: 18px; }
+
+    @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000318}}
+    .navbar-collapse, .navbar-default {
+      background-color: #fff;
+      border-color: #fff;
+      box-shadow: none; }
+
+      @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000324}}
+      .btn-primary {
+        margin-top: 9px;
+        border-radius: 1px;
+        border-color: #50b7f1;
+        color: #50b7f1; }
+
+        @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000342}}
+        .landing .dividing-stripe {
+          background-color: #5ecc66; }
+
+          @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000346}}
+          .landing .dividing-stripe .row {
+            margin: 0;
+            padding: 7px 0;
+            margin-left: -15px; }
+
+            @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000352}}
+            .landing .dividing-stripe .row p {
+              font-size: 35px;
+              color: #fff;
+              margin: 0; }
+
+              @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000359}}
+              .landing .zebra-stripe {
+                background-color: #f7f7f7; }
+
+                @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000367}}
+                #steps-desc {
+                  font-size: 50px;
+                  margin-top: 0px;
+                  text-align: center;
+                  color: #666;
+                  margin-bottom: -5px; }
+
+                  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000375}}
+                  .step-title {
+                    font-size: 28px;
+                    color: #666;
+                    margin-right: 10px;
+                    font-weight: 400; }
+
+                    @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000382}}
+                    .step-body {
+                      color: #555;
+                      margin-top: 20px;
+                      font-weight: 300;
+                      font-size: 20px; }
+
+                      @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000389}}
+                      .desc-title {
+                        font-size: 28px;
+                        color: #444;
+                        margin-bottom: 2px; }
+
+                        @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000395}}
+                        .need-it .row {
+                          padding-top: 60px;
+                          padding-bottom: 60px; }
+
+                          @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003100}}
+                          .landing #try-button {
+                            padding: 8px 34px;
+                            font-size: 24px;
+                            margin-top: 30px; }
+
+                            @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003118}}
+                            @media only screen and (min-width : 320px) {
+                              @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003118}}
+                              #logo {
+                                margin-top: 40px;   }
+                                @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003123}}
+                                #tagline {
+                                  font-size: 45px;
+                                  line-height: 56px;
+                                  max-width: 750px;
+                                  margin-top: 40px;
+                                  margin-bottom: 110px;
+                                  color: #666;   }
+                                  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003132}}
+                                  .landing .zebra-stripe {
+                                    padding-top: 60px;
+                                    padding-bottom: 60px;   }
 }
 
-.navbar-default .navbar-nav > li > a {
-    font-size:14px;
-}
-
-.btn, .form-control {
-    border-radius:2px;
-}
-
-.navbar.landing-navbar {
-	background-color: #fff;
-	border: none;
-	box-shadow: none;
-	margin-bottom: 0;
-}
-
-.form-pull-down {
-    margin-top:25px;
-}
-
-.navbar-default {
-    background: none repeat scroll 0 0 #fff;
-	min-height: 70px;
-    border-bottom: 1px solid #fff;
-}
-
-.navbar-brand {
-	padding: 0;
-}
-
-.navbar img {
-	margin: 9px 0 0 20px;
-}
-
-.bookmarklet-install-button {
-    margin-top:25px;
-    margin-bottom:45px;
-}
-
-.bookmarklet-install-button a {
-    margin-top:-5px;
-    margin-right:15px;
-}
-
-.bookmarklet-install p {
-    line-height:1.575em;
-}
-
-/* Item page for org page - start */
-
-.single-item-container {
-    background-color: #f5f6f7;
-    margin-top: 5px;
-    padding: 10px 0;
-}
-
-/* Item page for org page - end */
-
-/* Dashboard */
-
-.dashboard-row {
-    margin-top:35px;
-    margin-bottom:35px;
-}
-
-.dashboard-invite-new {
-    position:relative;
-    top:-5px;
-    text-transform:none;
-}
-
-.contributors-list {
-    border-bottom:1px solid #e89625;
-    margin-bottom:25px;
-}
-
-.count-label, .listed-contributor-items span {
-    font-family: $sans-font;
-    font-size:14px;
-    margin-bottom:0px;
-    margin-top:0px;
-    color:#888;
-    font-weight:400;
-}
-
-.count-number {
-    font-family: $sans-font;
-    font-size:48px;
-    font-weight:500;
-    line-height:1.1em;
-    color: #333;
-}
-
-.listed-contributor {
-    border-top:1px solid #e89625;
-    background-color:#fffff7;
-}
-
-.listed-contributor-email {
-    padding-top:15px;
-    padding-bottom:15px;
-    height:75px;
-}
-
-.listed-contributor-items {
-    font-size:32px;
-    padding-top:10px;
-    padding-bottom:15px;
-} 
-
-.listed-contributor-items span {
-    margin-left: 5px;
-    display:inline-block;
-}
-
-.listed-contributor-active {
-    font-size:14px;
-    padding-top:30px;
-    color:#888;
-}
-
-.listed-contributor-email button {
-    display:none;
-    margin-top:4px;
-}
-
-.listed-contributor:hover small {
-    display:none;
-}
-
-.listed-contributor small {
-    display:block;
-}
-
-.listed-contributor:hover button {
-    display:block;
-}
-
-/* Dashboard end */
-
-/* Add item start */
-#gallery-container {
-    height: 250px;
-    padding: 10px 0;
-}
-
-#gallery-container img {
-    max-height: 200px;
-    margin-right:20px;
-    border: 1px solid #ddd;
-    cursor: pointer;
-}
-
-#gallery-container .selected-image {
-    border-bottom: 8px solid #dddb4ff;
-    cursor: default;
-}
-
-#gallery-container .selectable-image {
-    border-bottom: 8px solid #ddd;
-}
-
-#gallery-container .selectable-image:hover {
-    border-bottom: 8px solid #b9e3ff;
-}
-
-#gallery-container #image-placeholder {
-    height: 200px;
-    width: 200px;
-    border: solid #bbb 1px;
-}
-
-#gallery-container #image-placeholder p{
-    font-size: 13px;
-}
-
-#gallery-container #image-placeholder img{
-    margin: 80px 85px;
-    border: none;
-    cursor: default;
-}
-
-/* Add item end */
-
-/* Landing start */
-
-#logo {
-	margin: -60px auto 0 auto;
-}
-
-.landing .tagline {
-	margin-top: 20px;
-	margin-bottom: 60px;
-	font-size: 22px;
-}
-
-.ill-placeholder {
-	border-radius: 50%;
-	width: 300px;;
-	height: 300px;
-	border: 20px solid #f8f8f8;
-}
-
-.landing .row {
-	margin-top: 80px;
-}
-
-.landing .logo-container {
-	margin-top: 110px;
-	margin-bottom: 220px;
-}
-
-.landing .logo-container p {
-	margin-top: 2px;
-	font-size: 28px;
-	line-height: 40px;
-}
-
-.landing .btn {
-	margin-top: 20px;
-	font-size: 22px;
-}
-
-.landing .logo-container .btn {
-	margin-top: 40px;
-}
-
-.landing p {
-	font-weight: 300;
-	font-size: 22px;
-	color: #888;
-}
-
-.landing h3 {
-	color: #555;
-	text-transform: none;
-	margin-bottom: 20px;
-	margin-top: 10px;
-	font-size: 28px;
-
-}
-
-.landing .tagline {
-	margin-top: 0px;
-	margin-bottom: 20px;
-	font-size: 28px;
-}
-
-.col-centered {
-	float: none;
-	margin: 0 auto;
-}
-
-/* Landing end */
-
-.bookmarklet-denied {
-    font-size:224px;
-    color:#fffeb3;
-    text-align:center;
-}
-
-/* Custom, iPhone Retina */ 
-@media only screen and (min-width : 320px) {
-    
-}
-
-/* Extra Small Devices, Phones */ 
-@media only screen and (min-width : 480px) {
-
-}
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
-
-}
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) {
-
-}
-
-/* Large Devices, Wide Screens */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003156}}
 @media only screen and (min-width : 1200px) {
-
-	 .paperplanes {
-		margin-top: -62px;
-	}
-
-	 .boombox {
-		margin-top: -45px;
-		width: 90%;
-	}
-	
-	 .picnic-table {
-		margin-top: -14px;
-	}
-	
-	 .change {
-		margin-top: -12px;
-		width: 85%;
-	}
-
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003156}}
+  .container {
+    width: 970px;   }
 }

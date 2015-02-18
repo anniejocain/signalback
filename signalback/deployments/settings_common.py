@@ -1,6 +1,11 @@
-import os
+import os, sys
 
-PROJECT_ROOT = os.path.abspath(os.path.dirname(__name__))
+# PROJECT_ROOT is the absolute path to the perma_web folder
+# We determine this robustly thanks to http://stackoverflow.com/a/2632297
+this_module = unicode(
+    sys.executable if hasattr(sys, "frozen") else __file__,
+    sys.getfilesystemencoding())
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(this_module)))
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -20,6 +25,8 @@ INSTALLED_APPS = (
     'tastypie',
     'django_forms_bootstrap',
     'kombu.transport.django', # Using the Django DB as our broker. We should NOT do this in production
+    'pipeline', # cache bust and compress our js and css
+    
 )
 
 DATABASES = {}
@@ -50,12 +57,42 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
+STATIC_ROOT = '{0}/items/static/'.format(PROJECT_ROOT)
+
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'pipeline.finders.PipelineFinder',
+    'pipeline.finders.FileSystemFinder',
+    'pipeline.finders.CachedFileFinder',
 )
+
+# Django Pipeline config
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+
+PIPELINE_COMPILERS = (
+    'pipeline_compass.compiler.CompassCompiler',
+)
+
+PIPELINE_JS = {}
+
+PIPELINE_CSS = {
+    'landing': {
+        'source_filenames': (
+            'css/bootstrap.min.css',
+            'css/bootstrap-theme.css',
+            'css/style.scss',
+        ),
+        'output_filename': 'css/landing-bundle.css',
+    },
+}
+
+# We likely want to do something like this:
+# PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
+PIPELINE_JS_COMPRESSOR = None
+PIPELINE_CSS_COMPRESSOR = None
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -75,6 +112,17 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+)
+
+
+# override to change .js mimetype from application/javascript for ie8 and below
+# see http://django-pipeline.readthedocs.org/en/latest/configuration.html#pipeline-mimetypes
+PIPELINE_MIMETYPES = (
+  (b'text/coffeescript', '.coffee'),
+  (b'text/less', '.less'),
+  (b'text/javascript', '.js'),
+  (b'text/x-sass', '.sass'),
+  (b'text/x-scss', '.scss')
 )
 
 ROOT_URLCONF = 'signalback.urls'
