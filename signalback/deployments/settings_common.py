@@ -79,6 +79,15 @@ PIPELINE_COMPILERS = (
 PIPELINE_JS = {}
 
 PIPELINE_CSS = {
+    'common': {
+        'source_filenames': (
+            'css/bootstrap.min.css',
+            'css/bootstrap-theme.css',
+            'css/style.scss',
+        ),
+        'output_filename': 'css/common-bundle.css',
+    },
+
     'landing': {
         'source_filenames': (
             'css/bootstrap.min.css',
@@ -87,6 +96,17 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'css/landing-bundle.css',
     },
+    
+    'items': {
+        'source_filenames': (
+            'css/bootstrap.min.css',
+            'css/bootstrap-theme.css',
+            'css/style.scss',
+        ),
+        'output_filename': 'css/items-bundle.css',
+    },
+    
+    
 }
 
 # We likely want to do something like this:

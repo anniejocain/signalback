@@ -108,6 +108,31 @@ body {
 /* ########################## */
 
 
+/* ########################## */
+/* # Items page             */
+/* ########################## */
+
+
+
+/* @import 'landing'; */
+
+/* our dividing stripes */
+
+
+.items .single-item-container {
+	margin-bottom: 15px;
+	background-color: $background_gray;
+}
+
+
+/* ########################## */
+/* # / Items page             */
+/* ########################## */
+
+
+
+
+
 
 /* ########################## */
 /* # Media queries            */
@@ -162,4 +187,148 @@ body {
 
 /* ########################## */
 /* # / Media queries          */
+/* ########################## */
+
+
+
+
+
+
+
+
+
+/* ########################## */
+/* # Old Stuff                */
+/* ########################## */
+
+
+
+
+/* Dashboard */
+
+.dashboard-row {
+    margin-top:35px;
+    margin-bottom:35px;
+}
+
+.dashboard-invite-new {
+    position:relative;
+    top:-5px;
+    text-transform:none;
+}
+
+.contributors-list {
+    border-bottom:1px solid #e89625;
+    margin-bottom:25px;
+}
+
+.count-label, .listed-contributor-items span {
+    font-size:14px;
+    margin-bottom:0px;
+    margin-top:0px;
+    color:#888;
+    font-weight:400;
+}
+
+.count-number {
+    font-size:48px;
+    font-weight:500;
+    line-height:1.1em;
+    color: #333;
+}
+
+.listed-contributor {
+    border-top:1px solid #e89625;
+    background-color:#fffff7;
+}
+
+.listed-contributor-email {
+    padding-top:15px;
+    padding-bottom:15px;
+    height:75px;
+}
+
+.listed-contributor-items {
+    font-size:32px;
+    padding-top:10px;
+    padding-bottom:15px;
+} 
+
+.listed-contributor-items span {
+    margin-left: 5px;
+    display:inline-block;
+}
+
+.listed-contributor-active {
+    font-size:14px;
+    padding-top:30px;
+    color:#888;
+}
+
+.listed-contributor-email button {
+    display:none;
+    margin-top:4px;
+}
+
+.listed-contributor:hover small {
+    display:none;
+}
+
+.listed-contributor small {
+    display:block;
+}
+
+.listed-contributor:hover button {
+    display:block;
+}
+
+/* Dashboard end */
+
+/* Add item start */
+#gallery-container {
+    height: 250px;
+    padding: 10px 0;
+}
+
+#gallery-container img {
+    max-height: 200px;
+    margin-right:20px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+#gallery-container .selected-image {
+    border-bottom: 8px solid #dddbff;
+    cursor: default;
+}
+
+#gallery-container .selectable-image {
+    border-bottom: 8px solid #ddd;
+}
+
+#gallery-container .selectable-image:hover {
+    border-bottom: 8px solid #b9e3ff;
+}
+
+#gallery-container #image-placeholder {
+    height: 200px;
+    width: 200px;
+    border: solid #bbb 1px;
+}
+
+#gallery-container #image-placeholder p{
+    font-size: 13px;
+}
+
+#gallery-container #image-placeholder img{
+    margin: 80px 85px;
+    border: none;
+    cursor: default;
+}
+
+/* Add item end */
+
+
+/* ########################## */
+/* # / Old Stuff              */
 /* ########################## */

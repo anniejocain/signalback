@@ -1,16 +1,21 @@
 {% extends "layouts/base.html" %}
-{% load static %}
+{% load static compressed %}
 {% get_static_prefix as STATIC_PREFIX %}
+
+{% block styles %}
+	{% compressed_css 'items' %}
+{% endblock styles %}
+
 
 {% block title %}Items{% endblock title %}
 
 {% block content %}
-
-    <div class="container">
-        <h1>All your items</h1>
-		<div id="item-container"></div>
-    </div><!-- /.container -->
-
+	<div class="items">
+	    <div class="container">
+	        <h1>All your items</h1>
+			<div id="item-container"></div>
+	    </div><!-- /.container -->
+	</div>
 
 {% endblock content %}
 
