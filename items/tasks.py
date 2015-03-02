@@ -6,8 +6,13 @@ from django.core.files import File
 from django.core.files.base import ContentFile
 
 import urllib, json
+from io import BytesIO
+import base64
+
 from urlparse import urlparse
 
+from selenium import webdriver
+from PIL import Image
 from celery import shared_task
 from bs4 import BeautifulSoup
 import requests
@@ -70,4 +75,30 @@ def get_screen_capture(image_gallery_id, target_url, markup):
     image_gallery = ImageGallery.objects.get(id=image_gallery_id)
     item_image = ItemImage(image_gallery=image_gallery)
     item_image.item_image.save(filename, image_content)
+    item_image.save()
+
+@shared_task
+def get_local_screen_capture(image_gallery_id, target_url, markup): 
+
+    # Get a screen capture of the page
+    driver = webdriver.PhantomJS(executable_path='/Users/matt/dev_area/signalback/bin/phantomjs')
+    driver.set_window_size(1366, 728) # optional
+    driver.get('http://google.com')
+
+
+    # Convert it and thumbnail it
+    imagedata = driver.get_screenshot_as_base64()
+    img = Image.open(BytesIO(base64.b64decode(imagedata)))
+    img = img.convert('RGB')
+    box = (0, 0, 1366, 728)
+    cropped = img.crop(box)
+    thumb_io = BytesIO()
+    cropped.save(thumb_io, format='png', option='optimize')
+
+
+    # Add the image to our datastore and update the gallery
+    image_content = ContentFile(thumb_io.getvalue())
+    image_gallery = ImageGallery.objects.get(id=image_gallery_id)
+    item_image = ItemImage(image_gallery=image_gallery)
+    item_image.item_image.save('screen_lores.png', image_content)
     item_image.save()

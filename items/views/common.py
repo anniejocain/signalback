@@ -2,7 +2,7 @@ from items.models import Item, BookmarkletKey, Organization, ImageGallery, ItemI
 from items.forms import (
     AddItemForm,
 )
-from items.tasks import get_twitter_card_image, get_screen_capture
+from items.tasks import get_twitter_card_image, get_local_screen_capture
 
 import logging, json
 import requests
@@ -45,7 +45,7 @@ def _get_gallery_images(image_gallery_id, target_url):
     get_twitter_card_image.delay(image_gallery_id, target_url, markup)
     
     # Get a screen capture of the page
-    get_screen_capture.delay(image_gallery_id, target_url, markup)
+    get_local_screen_capture.delay(image_gallery_id, target_url, markup)
         
     # Get the facebook open graph image
     

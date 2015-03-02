@@ -1,7 +1,7 @@
 $heading_font = 'Montserrat', sans-serif;
 $body_font = 'Lato', sans-serif;
 
-$background_gray = #ecf0f1;
+$background_gray = #f9f9f9;
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $heading_font;
@@ -40,7 +40,7 @@ body {
 /* our dividing stripes */
 
 .landing .dividing-stripe {
-	background-color: #5ecc66;
+	background-color: #21ce62;
 }
 
 .landing .dividing-stripe .row {
@@ -68,15 +68,16 @@ body {
 	font-size: 50px;
 	margin-top: 0px;
 	text-align: center;
-	color: #666;
-	margin-bottom: -5px;	
+	color: #777;
+	margin-bottom: -5px;
+	font-weight: 300;
 }
 
 .step-title {
-	font-size: 28px;
-	color: #666;
+	font-size: 34px;
+	color: #f05040;
 	margin-right: 10px;
-	font-weight: 400;
+	font-weight: 300;
 }
 
 .step-body {
@@ -87,14 +88,12 @@ body {
 }
 
 .desc-title {
-	font-size: 28px;
-	color: #444;
+	font-size: 50px;
+	line-height: 56px;
+	/*color: #e4ad40;*/
+	color: #f05040;
 	margin-bottom: 2px;
-}
-
-.need-it .row {
-	padding-top: 60px;
-	padding-bottom: 60px;
+	font-weight: 300;
 }
 
 .landing #try-button {
@@ -148,15 +147,26 @@ body {
 	
 	
 	#tagline {
-		font-size: 45px;
+		font-size: 47px;
 		line-height: 56px;
 		max-width: 750px;
 		margin-top: 40px;
 		margin-bottom: 110px;
+		font-weight: 300;
 		color: #666;
 	}
 	
 	.landing .zebra-stripe {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+
+	.need-it  {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.need-it  .row{
 		padding-top: 60px;
 		padding-bottom: 60px;
 	}
