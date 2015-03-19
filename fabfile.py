@@ -29,7 +29,10 @@ def push_to_heroku():
         myfile.write("\nEMAIL_HOST_PASSWORD='%s'" % EMAIL_HOST_PASSWORD)
         myfile.write("\nEMAIL_USE_TLS=%s" % EMAIL_USE_TLS)
         myfile.write("\nEMAIL_USE_SSL=%s" % EMAIL_USE_SSL)
-        
+    
+    # Generate our static files
+    local('python manage.py collectstatic')
+
     # Toss our temp settings in git and push to heroku
     local("git commit -a -m 'heroku build'")
     local("git push heroku %s:master --force" % heroku_branch_name)

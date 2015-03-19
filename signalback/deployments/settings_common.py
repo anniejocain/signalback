@@ -70,7 +70,7 @@ STATICFILES_FINDERS = (
 )
 
 # Django Pipeline config
-#STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 
 PIPELINE_COMPILERS = (
     'pipeline_compass.compiler.CompassCompiler',
