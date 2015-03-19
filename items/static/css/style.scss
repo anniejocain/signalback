@@ -1,7 +1,11 @@
 $heading_font = 'Montserrat', sans-serif;
 $body_font = 'Lato', sans-serif;
 
-$background_gray = #f9f9f9;
+$background_gray = #f7f9fa;
+$cyan = #3aa3dc;
+$red = #f15322;
+$green = #58c361;
+$magenta = #e6337e;
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $heading_font;
@@ -24,8 +28,8 @@ body {
 .btn-primary {
 	margin-top: 9px;
 	border-radius: 1px;
-	border-color: #50b7f1;
-	color: #50b7f1;
+	border-color: $cyan;
+	color: $cyan;
 }
 
 
@@ -40,7 +44,7 @@ body {
 /* our dividing stripes */
 
 .landing .dividing-stripe {
-	background-color: #21ce62;
+	background-color: $green;
 }
 
 .landing .dividing-stripe .row {
@@ -75,7 +79,7 @@ body {
 
 .step-title {
 	font-size: 34px;
-	color: #f05040;
+	color: $cyan;
 	margin-right: 10px;
 	font-weight: 300;
 }
@@ -91,7 +95,7 @@ body {
 	font-size: 50px;
 	line-height: 56px;
 	/*color: #e4ad40;*/
-	color: #f05040;
+	color: #555;
 	margin-bottom: 2px;
 	font-weight: 300;
 }
@@ -99,7 +103,7 @@ body {
 .landing #try-button {
 	padding: 8px 34px;
 	font-size: 24px;
-	margin-top: 30px;
+	margin-top: 40px;
 }
 
 /* ########################## */
