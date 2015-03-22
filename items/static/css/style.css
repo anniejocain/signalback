@@ -1,49 +1,50 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000311}}
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
   color: #ab76e8;
   text-transform: uppercase; }
 
-  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000316}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000317}}
   body {
     color: #666;
     font-family: 'Lato', sans-serif;
     font-size: 18px; }
 
-    @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000322}}
+    @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000323}}
     .navbar-collapse, .navbar-default {
       background-color: #fff;
       border-color: #fff;
       box-shadow: none; }
 
-      @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000328}}
+      @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000329}}
       .btn-primary {
         margin-top: 9px;
         border-radius: 1px;
-        border-color: #3aa3dc;
-        color: #3aa3dc; }
+        border-color: #54ace8;
+        color: #54ace8;
+        background-color: #fff; }
 
-        @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000346}}
+        @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000348}}
         .landing .dividing-stripe {
           background-color: #58c361; }
 
-          @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000350}}
+          @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000352}}
           .landing .dividing-stripe .row {
             margin: 0;
             padding: 7px 0;
             margin-left: -15px; }
 
-            @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000356}}
+            @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000358}}
             .landing .dividing-stripe .row p {
               font-size: 35px;
               color: #fff;
               margin: 0; }
 
-              @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000363}}
+              @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000365}}
               .landing .zebra-stripe {
                 background-color: #f7f9fa; }
 
-                @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000371}}
+                @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000373}}
                 #steps-desc {
                   font-size: 50px;
                   margin-top: 0px;
@@ -52,21 +53,21 @@ h1, h2, h3, h4, h5, h6 {
                   margin-bottom: -5px;
                   font-weight: 300; }
 
-                  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000380}}
+                  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000382}}
                   .step-title {
                     font-size: 34px;
-                    color: #3aa3dc;
+                    color: #54ace8;
                     margin-right: 10px;
                     font-weight: 300; }
 
-                    @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000387}}
+                    @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000389}}
                     .step-body {
                       color: #555;
                       margin-top: 20px;
                       font-weight: 300;
                       font-size: 20px; }
 
-                      @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000394}}
+                      @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\0000396}}
                       .desc-title {
                         font-size: 50px;
                         line-height: 56px;
@@ -74,23 +75,23 @@ h1, h2, h3, h4, h5, h6 {
                         margin-bottom: 2px;
                         font-weight: 300; }
 
-                        @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003103}}
+                        @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003105}}
                         .landing #try-button {
                           padding: 8px 34px;
                           font-size: 24px;
                           margin-top: 40px; }
 
-                          @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003125}}
+                          @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003127}}
                           .items .single-item-container {
                             margin-bottom: 15px;
                             background-color: #f7f9fa; }
 
-                            @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003146}}
+                            @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003148}}
                             @media only screen and (min-width : 320px) {
-                              @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003146}}
+                              @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003148}}
                               #logo {
                                 margin-top: 40px;   }
-                                @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003151}}
+                                @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003153}}
                                 #tagline {
                                   font-size: 47px;
                                   line-height: 56px;
@@ -99,45 +100,45 @@ h1, h2, h3, h4, h5, h6 {
                                   margin-bottom: 110px;
                                   font-weight: 300;
                                   color: #666;   }
-                                  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003161}}
+                                  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003163}}
                                   .landing .zebra-stripe {
                                     padding-top: 80px;
                                     padding-bottom: 80px;   }
-                                    @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003166}}
+                                    @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003168}}
                                     .need-it {
                                       padding-top: 20px;
                                       padding-bottom: 20px;   }
-                                      @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003171}}
+                                      @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003173}}
                                       .need-it .row {
                                         padding-top: 60px;
                                         padding-bottom: 60px;   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003195}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003197}}
 @media only screen and (min-width : 1200px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003195}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003197}}
   .container {
     width: 970px;   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003213}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003215}}
 .docs.api .api-warning {
   border: 1px #FF3535 solid;
   background-color: #FF3535;
   padding: 15px 15px 0 15px;
   margin-top: 30px; }
 
-  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003220}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003222}}
   .docs.api .api-warning p {
     font-weight: 300;
     color: #fff;
     font-size: 22px; }
 
-    @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003226}}
+    @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003228}}
     .docs.api span {
       margin-right: 15px; }
 
-      @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003230}}
+      @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003232}}
       pre {
         margin-top: 15px;
         margin-bottom: 15px;
@@ -146,23 +147,23 @@ h1, h2, h3, h4, h5, h6 {
         color: #444;
         margin-left: 0; }
 
-        @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003260}}
+        @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003262}}
         .dashboard-row {
           margin-top: 35px;
           margin-bottom: 35px; }
 
-          @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003265}}
+          @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003267}}
           .dashboard-invite-new {
             position: relative;
             top: -5px;
             text-transform: none; }
 
-            @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003271}}
+            @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003273}}
             .contributors-list {
               border-bottom: 1px solid #e89625;
               margin-bottom: 25px; }
 
-              @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003276}}
+              @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003278}}
               .count-label, .listed-contributor-items span {
                 font-size: 14px;
                 margin-bottom: 0px;
@@ -170,94 +171,94 @@ h1, h2, h3, h4, h5, h6 {
                 color: #888;
                 font-weight: 400; }
 
-                @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003284}}
+                @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003286}}
                 .count-number {
                   font-size: 48px;
                   font-weight: 500;
                   line-height: 1.1em;
                   color: #333; }
 
-                  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003291}}
+                  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003293}}
                   .listed-contributor {
                     border-top: 1px solid #e89625;
                     background-color: #fffff7; }
 
-                    @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003296}}
+                    @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003298}}
                     .listed-contributor-email {
                       padding-top: 15px;
                       padding-bottom: 15px;
                       height: 75px; }
 
-                      @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003302}}
+                      @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003304}}
                       .listed-contributor-items {
                         font-size: 32px;
                         padding-top: 10px;
                         padding-bottom: 15px; }
 
-                        @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003308}}
+                        @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003310}}
                         .listed-contributor-items span {
                           margin-left: 5px;
                           display: inline-block; }
 
-                          @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003313}}
+                          @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003315}}
                           .listed-contributor-active {
                             font-size: 14px;
                             padding-top: 30px;
                             color: #888; }
 
-                            @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003319}}
+                            @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003321}}
                             .listed-contributor-email button {
                               display: none;
                               margin-top: 4px; }
 
-                              @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003324}}
+                              @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003326}}
                               .listed-contributor:hover small {
                                 display: none; }
 
-                                @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003328}}
+                                @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003330}}
                                 .listed-contributor small {
                                   display: block; }
 
-                                  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003332}}
+                                  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003334}}
                                   .listed-contributor:hover button {
                                     display: block; }
 
-                                    @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003339}}
+                                    @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003341}}
                                     #gallery-container {
                                       height: 250px;
                                       padding: 10px 0; }
 
-                                      @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003344}}
+                                      @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003346}}
                                       #gallery-container img {
                                         max-height: 200px;
                                         margin-right: 20px;
                                         border: 1px solid #ddd;
                                         cursor: pointer; }
 
-                                        @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003351}}
+                                        @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003353}}
                                         #gallery-container .selected-image {
                                           border-bottom: 8px solid #dddbff;
                                           cursor: default; }
 
-                                          @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003356}}
+                                          @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003358}}
                                           #gallery-container .selectable-image {
                                             border-bottom: 8px solid #ddd; }
 
-                                            @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003360}}
+                                            @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003362}}
                                             #gallery-container .selectable-image:hover {
                                               border-bottom: 8px solid #b9e3ff; }
 
-                                              @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003364}}
+                                              @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003366}}
                                               #gallery-container #image-placeholder {
                                                 height: 200px;
                                                 width: 200px;
                                                 border: solid #bbb 1px; }
 
-                                                @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003370}}
+                                                @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003372}}
                                                 #gallery-container #image-placeholder p {
                                                   font-size: 13px; }
 
-                                                  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003374}}
+                                                  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003376}}
                                                   #gallery-container #image-placeholder img {
                                                     margin: 80px 85px;
                                                     border: none;

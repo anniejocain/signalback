@@ -2,10 +2,11 @@ $heading_font = 'Montserrat', sans-serif;
 $body_font = 'Lato', sans-serif;
 
 $background_gray = #f7f9fa;
-$cyan = #3aa3dc;
-$red = #f15322;
+$cyan = #54ace8;
+$red = #ea4134;
+$pink = #d6b6d1;
+$dark_gray = #94a5ca;
 $green = #58c361;
-$magenta = #e6337e;
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $heading_font;
@@ -30,6 +31,7 @@ body {
 	border-radius: 1px;
 	border-color: $cyan;
 	color: $cyan;
+	background-color: #fff;
 }
 
 

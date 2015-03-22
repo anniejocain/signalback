@@ -36,7 +36,7 @@ urlpatterns = patterns('items.views',
     url(r'^service/gallery/$', 'common.get_gallery', name='common_get_gallery'),
 
     # Docs.
-    url(r'^developer/$', TemplateView.as_view(template_name='docs/developer/landing.html'), name='developer_landing'),
+    url(r'^developer/?$', TemplateView.as_view(template_name='docs/developer/landing.html'), name='developer_landing'),
 
 
     # Tastypie urls. We might want to move these into their own file
