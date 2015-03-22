@@ -19,6 +19,7 @@ requests==2.4.3
 Werkzeug==0.9.6
 Fabric==1.10.0
 selenium==2.45.0
+awscli==1.7.15 # Copy our collected static to S3 (since django-pipeline doesn't play well with django-storages)
 
 # Prod/heroku stuff 
 dj-database-url==0.3.0
