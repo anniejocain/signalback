@@ -4,6 +4,7 @@ from items.models import ItemImage, ImageGallery
 
 from django.core.files import File
 from django.core.files.base import ContentFile
+from django.conf import settings
 
 import urllib, json
 from io import BytesIO
@@ -81,9 +82,11 @@ def get_screen_capture(image_gallery_id, target_url, markup):
 def get_local_screen_capture(image_gallery_id, target_url, markup): 
 
     # Get a screen capture of the page
-    driver = webdriver.PhantomJS(executable_path='/Users/matt/dev_area/signalback/bin/phantomjs')
+    if settings.DEBUG == False:
+            host = settings.HOST
+    driver = webdriver.PhantomJS(executable_path='{0}/bin/phantomjs'.format(settings.PROJECT_ROOT))
     driver.set_window_size(1366, 728) # optional
-    driver.get('http://google.com')
+    driver.get(target_url)
 
 
     # Convert it and thumbnail it
