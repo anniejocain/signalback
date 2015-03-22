@@ -37,9 +37,9 @@ def push_to_heroku():
     local("git branch -D %s" % heroku_branch_name)
 
     # Generate our static files
-    local('heroku config:set AWS_ACCESS_KEY_ID=%s"' % AWS_ACCESS_KEY_ID)
-    local('heroku config:set AWS_SECRET_ACCESS_KEY=%s"' % AWS_SECRET_ACCESS_KEY)
-    local('heroku config:set AWS_DEFAULT_REGION=us-west-2"')
+    local('heroku config:set AWS_ACCESS_KEY_ID=%s' % AWS_ACCESS_KEY_ID)
+    local('heroku config:set AWS_SECRET_ACCESS_KEY=%s' % AWS_SECRET_ACCESS_KEY)
+    local('heroku config:set AWS_DEFAULT_REGION=us-west-2')
     local('heroku run "aws s3 sync collected-static/. s3://signalback"')
     
     print "Pushed temp branch, %s, to Heroku" % heroku_branch_name
