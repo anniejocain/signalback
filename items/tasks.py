@@ -82,7 +82,14 @@ def get_screen_capture(image_gallery_id, target_url, markup):
 def get_local_screen_capture(image_gallery_id, target_url, markup): 
 
     # Get a screen capture of the page
-    driver = webdriver.PhantomJS(executable_path='{0}/bin/phantomjs'.format(settings.PROJECT_ROOT))
+
+    #TODO: There's likely a Heroku buildpath approach that's better
+    exe_path = '{0}/bin/phantomjs'.format(settings.PROJECT_ROOT)
+    if settings.DEBUG == False:
+        exe_path = '{0}/bin/heroku/phantomjs'.format(settings.PROJECT_ROOT)
+
+
+    driver = webdriver.PhantomJS(executable_path=exe_path)
     driver.set_window_size(1366, 728) # optional
     driver.get(target_url)
 
