@@ -29,11 +29,6 @@ def push_to_heroku():
         myfile.write("\nEMAIL_HOST_PASSWORD='%s'" % EMAIL_HOST_PASSWORD)
         myfile.write("\nEMAIL_USE_TLS=%s" % EMAIL_USE_TLS)
         myfile.write("\nEMAIL_USE_SSL=%s" % EMAIL_USE_SSL)
-
-
-    with open(".aws/credentials", "a") as myfile:
-        myfile.write("aws_access_key_id = %s" % AWS_ACCESS_KEY_ID)
-        myfile.write("\naws_secret_access_key = %s\n" % AWS_SECRET_ACCESS_KEY)
         
     # Toss our temp settings in git and push to heroku
     local("git commit -a -m 'heroku build'")
