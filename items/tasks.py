@@ -73,10 +73,18 @@ def get_local_screen_capture(image_gallery_id, target_url, markup):
     # Convert it and thumbnail it
     imagedata = driver.get_screenshot_as_base64()
     img = Image.open(BytesIO(base64.b64decode(imagedata)))
-    img = img.convert('RGB')
-    box = (0, 0, 600, 400)
 
-    cropped = img.crop(box)
+    thumb_width = 600
+
+    wpercent = (thumb_width/float(img.size[0]))
+    h_size = int((float(img.size[1])*float(wpercent)))
+    size = (thumb_width, h_size)
+    thumb = img.resize(size, Image.ANTIALIAS)
+
+    thumb = thumb.convert('RGB')
+    box = (0, 0, thumb_width, 400)
+
+    cropped = thumb.crop(box)
     thumb_io = BytesIO()
     cropped.save(thumb_io, format='png', option='optimize')
 
@@ -85,5 +93,5 @@ def get_local_screen_capture(image_gallery_id, target_url, markup):
     image_content = ContentFile(thumb_io.getvalue())
     image_gallery = ImageGallery.objects.get(id=image_gallery_id)
     item_image = ItemImage(image_gallery=image_gallery)
-    item_image.item_image.save('screen_lores.png', image_content)
+    item_image.item_image.save('{0}-thumb.png'.format(item_image.id), image_content)
     item_image.save()
