@@ -160,3 +160,5 @@ LOGIN_REDIRECT_URL = '/dashboard/'
 BROKER_URL = 'django://'
 
 DEFAULT_FROM_EMAIL = 'SignalBack <info@signalback.com>'
+
+TASTYPIE_DEFAULT_FORMATS = ['json']
