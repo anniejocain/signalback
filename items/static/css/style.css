@@ -131,7 +131,7 @@ h1, h2, h3, h4, h5, h6 {
   .docs.api .api-warning p {
     font-weight: 300;
     color: #fff;
-    font-size: 18px; }
+    font-size: 22px; }
 
     @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matt\/dev_area\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003226}}
     .docs.api span {

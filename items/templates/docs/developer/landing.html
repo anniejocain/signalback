@@ -54,6 +54,39 @@
 		title: "How computers will think"
 	}
 ]</pre>
+
+<h3>JSONP</h3>
+			<p>If you're building a JavaScript application that will run in a browser, you'll likely want to use JSONP. Just add the use the format and callback parameters in your request.</p>
+			<pre>http://signalback.com/api/v0.2/item/search/?q=test-org&format=jsonp&callback=any-callback-name-want</pre>
+			<p>This response will be a list of objects.</p>
+			<pre>
+any-callback-name-want([
+	{
+		contributed_date: "2015-03-22T16:25:59.093381",
+		contributor: "Jane",
+		description: "Sometimes is pretty to see things crumble.",
+		link: "http://www.itsnicethat.com/articles/script-of-demolition",
+		thumbnail: "http://signalback.s3.amazonaws.com/item_images/screen_lores.png",
+		title: "Behind the scenes of the people who demolish buildings for a living"
+	},
+	{
+		contributed_date: "2015-03-22T16:22:01.446066",
+		contributor: "Jane",
+		description: "Not many WWII folks left.",
+		link: "http://fivethirtyeight.com/datalab/what-percentage-of-americans-have-served-in-the-military/",
+		thumbnail: "http://signalback.s3.amazonaws.com/item_images/458823940crop.jpg",
+		title: "What Percentage Of Americans Have Served In The Military?"
+	},
+
+	{
+		contributed_date: "2015-03-22T16:19:11.750073",
+		contributor: "Jane",
+		description: "Thinking about computers thinking.",
+		link: "http://fusion.net/story/35648/how-computers-will-think/",
+		thumbnail: "http://signalback.s3.amazonaws.com/item_images/screen_lores.png",
+		title: "How computers will think"
+	}
+])</pre>
         </div> <!-- col -->
 	</div> <!-- row -->
 </div> <!-- container -->

@@ -82,7 +82,6 @@ PIPELINE_CSS = {
     'common': {
         'source_filenames': (
             'css/bootstrap.min.css',
-            'css/bootstrap-theme.css',
             'css/style.scss',
         ),
         'output_filename': 'css/common-bundle.css',
@@ -90,18 +89,12 @@ PIPELINE_CSS = {
 
     'landing': {
         'source_filenames': (
-            'css/bootstrap.min.css',
-            'css/bootstrap-theme.css',
-            'css/style.scss',
         ),
         'output_filename': 'css/landing-bundle.css',
     },
     
     'items': {
         'source_filenames': (
-            'css/bootstrap.min.css',
-            'css/bootstrap-theme.css',
-            'css/style.scss',
         ),
         'output_filename': 'css/items-bundle.css',
     },
@@ -161,4 +154,4 @@ BROKER_URL = 'django://'
 
 DEFAULT_FROM_EMAIL = 'SignalBack <info@signalback.com>'
 
-TASTYPIE_DEFAULT_FORMATS = ['json']
+TASTYPIE_DEFAULT_FORMATS = ['json', 'jsonp']

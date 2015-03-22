@@ -55,30 +55,6 @@ def get_twitter_card_image(image_gallery_id, target_url, markup):
         
 
 @shared_task
-def get_screen_capture(image_gallery_id, target_url, markup):
-    """
-    This function will get a screen capture of the page from our
-    preview service. Then, it'll save it to our media store
-    and update our gallery model.
-    """
-    preview_url = 'http://hlslwebtest.law.harvard.edu/preview/create?thumb=400px*300px&url=%s' % urllib.quote(target_url)
-    response = requests.get(preview_url, verify=False).text
-    serialized_response = json.loads(response)
-
-    preview_url_image = 'http://hlslwebtest.law.harvard.edu%s' % serialized_response['thumb_url']
-
-    # Get our filename. Isn't there a better way to do this?
-    parsed_url = urlparse(preview_url_image)
-    filename = parsed_url.path.split('/')[-1]
-
-    # Add the image to our datastore and update the gallery
-    image_content = ContentFile(requests.get(preview_url_image, verify=False).content)
-    image_gallery = ImageGallery.objects.get(id=image_gallery_id)
-    item_image = ItemImage(image_gallery=image_gallery)
-    item_image.item_image.save(filename, image_content)
-    item_image.save()
-
-@shared_task
 def get_local_screen_capture(image_gallery_id, target_url, markup): 
 
     # Get a screen capture of the page
@@ -98,7 +74,8 @@ def get_local_screen_capture(image_gallery_id, target_url, markup):
     imagedata = driver.get_screenshot_as_base64()
     img = Image.open(BytesIO(base64.b64decode(imagedata)))
     img = img.convert('RGB')
-    box = (0, 0, 1366, 728)
+    box = (0, 0, 600, 400)
+
     cropped = img.crop(box)
     thumb_io = BytesIO()
     cropped.save(thumb_io, format='png', option='optimize')
