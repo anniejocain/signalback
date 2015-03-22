@@ -82,8 +82,6 @@ def get_screen_capture(image_gallery_id, target_url, markup):
 def get_local_screen_capture(image_gallery_id, target_url, markup): 
 
     # Get a screen capture of the page
-    if settings.DEBUG == False:
-            host = settings.HOST
     driver = webdriver.PhantomJS(executable_path='{0}/bin/phantomjs'.format(settings.PROJECT_ROOT))
     driver.set_window_size(1366, 728) # optional
     driver.get(target_url)
