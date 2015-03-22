@@ -4,6 +4,7 @@ from django.conf.urls import patterns, url, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib.auth import views as auth_views
 from django.views.generic import RedirectView
+from django.views.generic.base import TemplateView
 
 from items.api import ItemResource
 
@@ -34,8 +35,12 @@ urlpatterns = patterns('items.views',
     # Services. These should probably be in the API
     url(r'^service/gallery/$', 'common.get_gallery', name='common_get_gallery'),
 
+    # Docs.
+    url(r'^developer/$', TemplateView.as_view(template_name='docs/developer/landing.html'), name='developer_landing'),
+
+
     # Tastypie urls. We might want to move these into their own file
-    (r'^api/', include(item_resource.urls)),
+    (r'^api/v0.2/', include(item_resource.urls)),
     
     # List of user links
     url(r'^(?P<slug>[a-zA-Z-]+)/?$', 'dashboard.display_items', name='dashboard_display_items'),
