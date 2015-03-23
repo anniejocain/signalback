@@ -57,7 +57,7 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
-STATIC_ROOT = '{0}/items/static/'.format(PROJECT_ROOT)
+STATIC_ROOT = '{0}/collected-static/'.format(PROJECT_ROOT)
 
 # List of finder classes that know how to find static files in
 # various locations.
