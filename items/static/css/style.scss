@@ -1,10 +1,11 @@
 $heading_font = 'Montserrat', sans-serif;
 $body_font = 'Lato', sans-serif;
 
-$background_gray = #fafdfd;
+$background_gray = #fdfdfc;
+$light-cyan = #eaf5fc;
 $cyan = #54ace8;
 $red = #ef524b;
-$pink = #d6b6d1;
+$pink = #f49deb;
 $dark_gray = #94a5ca;
 $green = #58c361;
 
@@ -30,8 +31,14 @@ body {
 	margin-top: 9px;
 	border-radius: 1px;
 	border-color: $cyan;
-	color: $cyan;
+	color: #666;
 	background-color: #fff;
+}
+
+.btn-primary:hover {
+	background-color: $light-cyan;
+	color: #666;
+	border-color: $cyan;
 }
 
 
@@ -90,14 +97,13 @@ body {
 	color: #555;
 	margin-top: 20px;
 	font-weight: 300;
-	font-size: 20px;
+	font-size: 21px;
 }
 
 .desc-title {
-	font-size: 50px;
-	line-height: 56px;
-	/*color: #e4ad40;*/
-	color: #555;
+	font-size: 47px;
+	line-height: 46px;
+	color: $cyan;
 	margin-bottom: 2px;
 	font-weight: 300;
 }
@@ -168,14 +174,32 @@ body {
 	}
 
 	.need-it  {
-		padding-top: 20px;
+		padding-top: 40px;
 		padding-bottom: 20px;
 	}
 
-	.need-it  .row{
-		padding-top: 60px;
-		padding-bottom: 60px;
+	.need-it  .row {
+		padding-top: 50px;
+		padding-bottom: 50px;
 	}
+
+	.need-it .paperplanes {
+		margin-top: -20px;
+	}
+
+	.need-it .controls {
+		margin-left: 60px;
+	}
+
+	.need-it .controls-img {
+		margin-top: -10px;
+	}
+
+	.need-it .picnic {
+		margin-top: 25px;
+	}
+
+
 }
 
 /* Extra Small Devices, Phones */ 
@@ -223,10 +247,18 @@ body {
 	font-weight: 300;
 	color: #fff;
 	font-size: 22px;
+	display: inline;
 }
 
 .docs.api span {
 	margin-right: 15px;
+	font-size: 30px;
+	color: #fff;
+	margin-bottom: 20px;
+}
+
+.docs.api glyphicon {
+	margin-top: 5px;
 }
 
 pre {
