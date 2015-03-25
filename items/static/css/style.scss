@@ -11,7 +11,7 @@ $green = #58c361;
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $heading_font;
-    color: #ab76e8;
+    color: #555;
     text-transform:uppercase;
 }
 
@@ -248,13 +248,14 @@ body {
 	color: #fff;
 	font-size: 22px;
 	display: inline;
+	vertical-align: top;
 }
 
 .docs.api span {
 	margin-right: 15px;
 	font-size: 30px;
 	color: #fff;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
 
 .docs.api glyphicon {
@@ -319,7 +320,7 @@ pre {
     font-size:48px;
     font-weight:500;
     line-height:1.1em;
-    color: #333;
+    color: #555;
 }
 
 .listed-contributor {
