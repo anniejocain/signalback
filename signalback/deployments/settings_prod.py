@@ -12,6 +12,9 @@ INSTALLED_APPS += (
     'storages',
 )
 
+# The host we send in email
+HOST = 'signalback.com'
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # this goes away when we switch to cleardb?
