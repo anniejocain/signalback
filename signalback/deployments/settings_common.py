@@ -125,8 +125,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'items.middleware.exception_logging_middleware.ExceptionLoggingMiddleware',
-
 )
 
 

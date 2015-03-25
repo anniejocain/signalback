@@ -28,4 +28,12 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_S3_SECURE_URLS = False       # use http instead of https
 AWS_QUERYSTRING_AUTH = False     # don't add complex authentication-related query parameters for requests
 
+# Write our logs to stderr for heroku
+MIDDLEWARE_CLASSES += (
+    'items.middleware.exception_logging_middleware.ExceptionLoggingMiddleware',
+)
 
+LOGGING = {
+    'version': 1,
+    'root': {'level': 'DEBUG' if DEBUG else 'INFO'},
+}
