@@ -3,7 +3,7 @@ from settings_common import *
 import dj_database_url
 
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = ['*']
