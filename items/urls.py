@@ -31,13 +31,17 @@ urlpatterns = patterns('items.views',
     url(r'^password/reset/confirm/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)/?$', auth_views.password_reset_confirm, {'template_name': 'registration/password_reset_confirm.html'}, name='auth_password_reset_confirm'),
     url(r'^password/reset/complete/?$', auth_views.password_reset_complete, {'template_name': 'registration/password_reset_complete.html'}, name='auth_password_reset_complete'),
     url(r'^password/reset/done/?$', auth_views.password_reset_done, {'template_name': 'registration/password_reset_done.html'}, name='auth_password_reset_done'),
+    url(r'^register/?$', 'user_management.register', name='register'),
+    url(r'^register/password/(?P<code>\w+)/$', 'user_management.register_email_code_password', name='register_password'),
+    url(r'^register/email/?$', 'user_management.register_email_instructions', name='register_email_instructions'),
+    #url(r'^api_key/create/?$', 'user_management.api_key_create', name='api_key_create'),
+
 
     # Services. These should probably be in the API
     url(r'^service/gallery/$', 'common.get_gallery', name='common_get_gallery'),
 
     # Docs.
     url(r'^developer/?$', TemplateView.as_view(template_name='docs/developer/landing.html'), name='developer_landing'),
-
 
     # Tastypie urls. We might want to move these into their own file
     (r'^api/v0.2/', include(item_resource.urls)),

@@ -57,6 +57,10 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
+
+AUTH_USER_MODEL = 'items.SBUser'
+
+
 STATIC_ROOT = '{0}/collected-static/'.format(PROJECT_ROOT)
 
 # List of finder classes that know how to find static files in
@@ -126,7 +130,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
-
 
 # override to change .js mimetype from application/javascript for ie8 and below
 # see http://django-pipeline.readthedocs.org/en/latest/configuration.html#pipeline-mimetypes
