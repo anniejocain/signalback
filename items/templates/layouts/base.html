@@ -51,7 +51,7 @@
 	            <li><a href="{% url 'dashboard_landing' %}" id="nav-button">Dashboard</a></li>
 			{% else %}
 			    <li><a href="{% url 'auth_login' %}">Log in</a></li>
-										<button type="button" class="btn btn-primary center-block">Try SignalBack</button>
+				<li><a href="{% url 'register' %}" role="button" class="btn btn-primary center-block">Try SignalBack</a></li>
 			{% endif %}
 			{% comment %}
 	        <li class="dropdown">

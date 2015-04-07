@@ -35,10 +35,23 @@ body {
 	background-color: #fff;
 }
 
-.btn-primary:hover {
+.nav .btn:hover {
 	background-color: $light-cyan;
 	color: #666;
 	border-color: $cyan;
+}
+
+.nav a {
+	margin-top: 16px;
+}
+
+.nav a.btn {
+	margin-top: 20px;
+	margin-right: 10px;
+	padding: 10px;
+	padding-left: 25px;
+	padding-right: 25px;
+	font-size: 18px;
 }
 
 
@@ -108,10 +121,15 @@ body {
 	font-weight: 300;
 }
 
+.landing li {
+	list-style: none;
+}
+
 .landing #try-button {
 	padding: 8px 34px;
 	font-size: 24px;
 	margin-top: 40px;
+	width: 250px;
 }
 
 /* ########################## */
