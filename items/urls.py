@@ -36,10 +36,6 @@ urlpatterns = patterns('items.views',
     url(r'^register/email/?$', 'user_management.register_email_instructions', name='register_email_instructions'),
     #url(r'^api_key/create/?$', 'user_management.api_key_create', name='api_key_create'),
 
-
-    # Services. These should probably be in the API
-    url(r'^service/gallery/$', 'common.get_gallery', name='common_get_gallery'),
-
     # Docs.
     url(r'^developer/?$', TemplateView.as_view(template_name='docs/developer/landing.html'), name='developer_landing'),
 
