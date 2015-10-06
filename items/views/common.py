@@ -1,8 +1,7 @@
-from items.models import Item, BookmarkletKey, Organization, ImageGallery, ItemImage
+from items.models import Item, BookmarkletKey, Organization
 from items.forms import (
     AddItemForm,
 )
-from items.tasks import get_twitter_card_image, get_local_screen_capture
 
 import logging, json
 import requests
@@ -33,25 +32,6 @@ def landing(request):
     return render_to_response('landing.html', context)
     
     
-def _get_gallery_images(image_gallery_id, target_url):
-    """
-    A helper function to call all of our async image gathering tasks
-    """
-    
-    # Get our markup
-    markup = requests.get(target_url, verify=False).text
-    
-    # Get twitter image
-    get_twitter_card_image.delay(image_gallery_id, target_url, markup)
-    
-    # Get a screen capture of the page
-    get_local_screen_capture.delay(image_gallery_id, target_url, markup)
-        
-    # Get the facebook open graph image
-    
-    # Get the first n images on the page
-
-    
     
 def add_item(request):
 
@@ -80,13 +60,6 @@ def add_item(request):
             item = add_form.save(commit=False)
             item.bookmarklet_key = bookmarklet_key
             item.save()
-            
-            item_image_id = request.POST.get('image-rep', '')
-            
-            item_image = ItemImage.objects.get(id=item_image_id)
-            item_image.item=item
-            item_image.save()
-            
             
             return HttpResponseRedirect(reverse('dashboard_display_items', kwargs={'slug' : organization.slug}))   
         else:
@@ -122,31 +95,3 @@ def install_bookmarklet(request, bookmarklet_key_id):
     context = RequestContext(request, context)
     
     return render_to_response('install_bookmarklet.html', context)
-    
-    
-# TODO: this shouldn't be csrf exempt. or if it is, we should require a bookmarklet_key
-@csrf_exempt
-def get_gallery(request):
-    
-    if request.method == 'POST':
-        target_url = request.POST.get('target_url', '')
-        
-        # Start gathering our images
-        image_gallery = ImageGallery()
-        image_gallery.save()
-        _get_gallery_images(image_gallery.id, target_url)
-
-        response_data = {}
-        response_data['gallery_id'] = image_gallery.id
-        return HttpResponse(json.dumps(response_data), content_type="application/json")
-    
-
-    gallery_id = request.GET.get('gallery_id', '')
-
-    gallery_images = ItemImage.objects.filter(image_gallery__id=gallery_id)
-    
-    image_list = []
-    for g_i in gallery_images:
-        image_list.append({"path": g_i.item_image.url, "id": g_i.id})
-    
-    return HttpResponse(json.dumps(image_list), mimetype='application/json')
