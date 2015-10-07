@@ -1,5 +1,5 @@
 {% extends "layouts/base.html" %}
-{% load static %}
+{% load static bootstrap_tags %}
 {% get_static_prefix as STATIC_PREFIX %}
 
 {% block title %}Install bookmarklet{% endblock title %}
@@ -10,7 +10,13 @@
         <h1>Install bookmarklet</h1>
         <div class="row">
             <div class="col-md-8">
-          <div class="bookmarklet-install-button"><a id="bookmarklet" class="btn btn-success btn-lg" href="javascript:(function(){%20window.open(%22http://{{bookmarklet_domain}}/add-item?link=%22+encodeURIComponent(%20location.href)+%22&title=%22+encodeURIComponent(document.title)+%22&bookmarklet_key={{bookmarklet_key}}%22);%20})();">Signal back</a> <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Drag this button into your browser toolbar</div>
+<!--          <div class="bookmarklet-install-button"><a id="bookmarklet" class="btn btn-success btn-lg" href="javascript:(function(){%20window.open(%22http://{{bookmarklet_domain}}/add-item?link=%22+encodeURIComponent(%20location.href)+%22&title=%22+encodeURIComponent(document.title)+%22&bookmarklet_key={{bookmarklet_key}}%22);%20})();">Signal back</a> <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Drag this button into your browser toolbar</div> -->
+            
+            <form method="post" action="#" role="form" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form|as_bootstrap }}
+                <button type="submit" class="btn btn-primary btn-block">Update profile</button>
+            </form>
           </div>
         </div>
         <div class="row">

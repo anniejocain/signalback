@@ -12,6 +12,18 @@ class AddItemForm(forms.ModelForm):
         exclude = ('contributed_date', 'bookmarklet_key')
 
 
+
+class BookmarkletKeyForm(forms.ModelForm):
+    """
+    A form that helps users update their profiles
+    """
+    class Meta:
+        model = BookmarkletKey
+        exclude = ('key', 'is_active', 'organization')
+
+
+
+
 class CreateUserForm(forms.ModelForm):
 
     """

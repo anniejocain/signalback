@@ -1,6 +1,6 @@
 from items.models import Item, BookmarkletKey, Organization
 from items.forms import (
-    AddItemForm,
+    AddItemForm, BookmarkletKeyForm,
 )
 
 import logging, json
@@ -90,8 +90,35 @@ def install_bookmarklet(request, bookmarklet_key_id):
     organization = bookmarklet_key.organization
     bookmarklet_domain = Site.objects.get_current().domain
 
-    context = {'bookmarklet_key': bookmarklet_key_id, 'organization': organization, 'bookmarklet_domain': bookmarklet_domain}
-               
+    if not bookmarklet_key.is_active:
+        return render_to_response('bookmarklet_denied.html')
+
+
+    context = {'bookmarklet_key': bookmarklet_key_id,
+               'organization': organization, 'bookmarklet_domain': bookmarklet_domain}
+    
+
+    
+
+    if request.method == 'POST':
+        profile_form = BookmarkletKeyForm(request.POST, request.FILES, prefix='profile', instance=bookmarklet_key)    
+        if profile_form.is_valid():
+
+            print "form valid. saving"
+            profile = profile_form.save()
+
+            return HttpResponseRedirect(reverse('common_install_bookmarklet', kwargs={'bookmarklet_key_id' : bookmarklet_key_id}))
+        else:
+            print "form not valid. try again, pal."
+            context['form'] = profile_form
+            return render_to_response('install_bookmarklet.html', context)
+    
+    else:        
+        profile_form = BookmarkletKeyForm( prefix='profile', instance=bookmarklet_key)
+        
+
+
+    context['form'] = profile_form
     context = RequestContext(request, context)
     
     return render_to_response('install_bookmarklet.html', context)

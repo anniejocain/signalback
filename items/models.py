@@ -22,7 +22,8 @@ class BookmarkletKey(models.Model):
     is_active = models.BooleanField(default=True)
     email = models.EmailField(max_length=254, null=True, blank=True)
     display_name = models.CharField(max_length=400, null=True, blank=True)
-    
+    profile_pic = models.ImageField(upload_to='profile-pics', null=True, blank=True)
+
     def save(self, *args, **kwargs):
         """
         We need a unique key for each bookmarklet. Let's create that key
@@ -32,7 +33,8 @@ class BookmarkletKey(models.Model):
         if not self.key:
             generated_key = uuid.uuid4()
             self.key = str(generated_key)
-            super(BookmarkletKey, self).save(*args, **kwargs)
+        
+        super(BookmarkletKey, self).save(*args, **kwargs)
             
     def __unicode__(self):
         return self.key

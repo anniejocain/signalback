@@ -34,8 +34,8 @@ You'll need a Django friendly database. SQLite is not currently supported. We re
 If you want to use MySQL, something like the following can be used to create a new user and a new database:
 
 	mysql -u root -psomepasshere
-	mysql> create database roundup character set utf8; grant all on roundup.* to roundup@'localhost' identified by 'roundup';
-	mysql -u roundup -proundup roundup
+	mysql> create database sb character set utf8; grant all on sb.* to sb@'localhost' identified by 'sb';
+	mysql -u sb -psb sb
 
 ### Settings
 

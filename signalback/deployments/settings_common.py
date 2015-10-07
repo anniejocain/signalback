@@ -21,7 +21,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'items',
-    'south',
     'tastypie',
     'django_forms_bootstrap',
     'kombu.transport.django', # Using the Django DB as our broker. We should NOT do this in production
