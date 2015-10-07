@@ -81,6 +81,36 @@ class UserRegForm(forms.ModelForm):
         except SBUser.DoesNotExist:
             return email
         raise forms.ValidationError(self.error_messages['duplicate_email'])
+        
+        
+class OrganizationFormSelfRegistration(forms.ModelForm):
+
+    error_messages = {
+        'duplicate_slug': "Somebody already claimed that address.",
+    }
+            
+    class Meta:
+        model = Organization
+        fields = ("name", "slug")
+        
+    def clean_slug(self):
+        # Since slug is unique, this check is redundant,
+        # but it sets a nicer error message than the ORM. See #13147.
+        slug = self.cleaned_data["slug"]
+        try:
+            Organization.objects.get(slug=slug)
+        except Organization.DoesNotExist:
+            return slug
+        raise forms.ValidationError(self.error_messages['duplicate_slug'])
+        
+    def __init__(self, *args, **kwargs):
+            super(OrganizationFormSelfRegistration, self).__init__(*args, **kwargs)
+            self.fields['slug'].label = "Your Signal Back address"
+            #self.fields['slug'].help_text = "signalback.com"
+            self.fields['name'].label = "Name of your organization"
+            self.fields.keyOrder = [
+            'name',
+            'slug']
 
 
 class SetPasswordForm(forms.Form):

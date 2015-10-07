@@ -13,6 +13,7 @@ from items.models import SBUser
 from items.forms import (
       CreateUserForm,
       UserRegForm,
+      OrganizationFormSelfRegistration,
       SetPasswordForm,
 )
 
@@ -20,24 +21,29 @@ logger = logging.getLogger(__name__)
 
 def register(request):
     """
-    Register a new user
+    Register a new user with a new organization
     """
     if request.method == 'POST':
-        form = UserRegForm(request.POST)
-        if form.is_valid():
-            new_user = form.save(commit=False)
+        user_reg_form = UserRegForm(request.POST, prefix = "a")
+        org_form = OrganizationFormSelfRegistration(request.POST, prefix = "b")
+        if user_reg_form.is_valid() and org_form.is_valid():
+            new_org = org_form.save(commit=False)
+            new_user = user_reg_form.save(commit=False)
             new_user.backend='django.contrib.auth.backends.ModelBackend'
             new_user.is_active = False
             new_user.save()
+            new_org.user = new_user
+            new_org.save()
             
             email_new_user(request, new_user)
 
             return HttpResponseRedirect(reverse('register_email_instructions'))
     else:
-        form = UserRegForm()
+        user_reg_form = UserRegForm(prefix = "a")
+        org_form = OrganizationFormSelfRegistration(prefix = "b")
 
     return render_to_response("registration/register.html",
-        {'form':form},
+        {'user_reg_form':user_reg_form, 'org_form': org_form},
         RequestContext(request))
 
 
@@ -72,30 +78,6 @@ def register_email_code_password(request, code):
         form = SetPasswordForm(user=user)
 
     return render_to_response('registration/set_password.html', {'form': form}, RequestContext(request))
-
-
-def register(request):
-    """
-    Register a new user
-    """
-    if request.method == 'POST':
-        form = UserRegForm(request.POST)
-        if form.is_valid():
-            new_user = form.save(commit=False)
-            new_user.backend='django.contrib.auth.backends.ModelBackend'
-            new_user.is_active = False
-            new_user.username = new_user.email
-            new_user.save()
-            
-            email_new_user(request, new_user)
-
-            return HttpResponseRedirect(reverse('register_email_instructions'))
-    else:
-        form = UserRegForm()
-
-    return render_to_response("registration/register.html",
-        {'form':form},
-        RequestContext(request))
 
 
 def email_new_user(request, user):

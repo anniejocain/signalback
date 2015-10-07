@@ -85,23 +85,6 @@ class SBUser(AbstractBaseUser):
     class Meta:
         verbose_name = 'User'
 
-    def save(self, *args, **kwargs):
-        super(SBUser, self).save(*args, **kwargs)
-
-        # make sure each user has an org
-        try:
-            user = Organization.objects.get(user=self)
-        except Organization.DoesNotExist:
-            self.create_organization()
-            
-
-    def create_organization(self):
-        try:
-            user = Organization.objects.get(user=self)
-        except Organization.DoesNotExist:
-            org = Organization(user=self, name="Your Org", slug="your-org", public_email='your-email@example.com', public_link='http://example.com')
-            org.save()
-
     
 class Item(models.Model):
     bookmarklet_key = models.ForeignKey(BookmarkletKey)
