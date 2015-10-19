@@ -1,0 +1,92 @@
+{% load static bootstrap_tags compressed %}
+{% get_static_prefix as STATIC_PREFIX %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{{ STATIC_PREFIX }}img/favicon.png">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <title>An invitation</title>
+
+    {% compressed_css 'common' %}
+    
+    {% block styles %}
+        
+    {% endblock styles %}
+        
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+
+    <div class="container collaborator">
+        <p class="title"> Welcome to SignalBack</p>
+        <p class="intro">{{organization.name}} wants your contributions.</p>
+
+        <form method="post" action="#" role="form" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+                <div class="row picture-row">
+                    <div class="col-sm-6">
+                        {% if form.instance.profile_pic %}
+                            <img src="{{ form.instance.profile_pic.url }}">
+                        {% else %}
+                            <img src="{{ STATIC_PREFIX }}img/stock-woman.jpg">
+                        {% endif %}
+                    </div>
+                    <div class="col-sm-6">
+                        {{ form.profile_pic.errors }}
+                            
+                        <label class="upload-label">
+                            <div class='upload-button-container'>
+                                {{ form.profile_pic }}
+                                <div class="upload-pic-button">Upload picture</div>
+                            </div>
+                        </label>
+                        <p class="pic-status">Profile picture saved</p>
+                    </div>
+                </div> <!-- row -->
+            
+
+            <div class="row name-email-row">
+                <div class="col-sm-12">
+                    {{ form.display_name }}
+                </div>
+                <div class="col-sm-12">
+                    {{ form.email }}
+                </div>
+            </div> <!-- row -->
+            <div class="row">
+                <div class="col-sm-6">
+                </div>
+                <div class="col-sm-6">
+                    <input type="submit" value="Save name and email">
+                    <p class="name-status">Name an email saved</p>
+                </div>
+
+            </div> <!-- row -->
+        </form>
+    </div><!-- /.container -->
+
+    
+    <script src="{{ STATIC_PREFIX }}js/jquery-1.11.1.min.js"></script>
+    <script src="{{ STATIC_PREFIX }}js/jquery.typewatch.js"></script>
+    <script src="{{ STATIC_PREFIX }}js/collab.js"></script>
+    {% block scripts %}{% endblock scripts %}
+  </body>
+</html>
+

@@ -1,6 +1,8 @@
 from items.models import Organization, BookmarkletKey, Item
 
 from django import forms
+from django.forms import FileInput
+
 from items.models import SBUser
 
 class AddItemForm(forms.ModelForm):
@@ -19,10 +21,11 @@ class BookmarkletKeyForm(forms.ModelForm):
     """
     class Meta:
         model = BookmarkletKey
-        exclude = ('key', 'is_active', 'organization')
-
-
-
+        exclude = ('key', 'is_active', 'organization',)
+        widgets = {
+            'profile_pic': FileInput(),
+            'display_name': forms.TextInput(attrs={'placeholder': 'your name'}),
+        }
 
 class CreateUserForm(forms.ModelForm):
 

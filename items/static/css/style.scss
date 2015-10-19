@@ -159,7 +159,93 @@ body {
 /* ########################## */
 
 
+/* ########################## */
+/* # Collaborator page        */
+/* ########################## */
 
+.collaborator {
+
+	max-width: 500px;
+
+	img {
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		display: block;
+    	margin: auto;
+		cursor: pointer;
+	}
+
+	label.upload-label {
+		width: 100%;
+	}
+
+	label.upload-label input[type="file"] {
+	    position: fixed;
+	    top: -1000px;
+	}
+
+	.upload-pic-button {
+		border-radius: 2px;
+		display: block;
+		width: 100%;
+		margin: 55px auto 0 auto;
+		padding: 5px 13px;
+		border: 1px solid #54ace8;;
+		cursor: pointer;
+    	font-weight: 400;
+    	text-align: center;
+	}
+
+	input {
+		margin: 10px 0;
+		width: 100%;
+		border: 1px solid #ccc;
+		border-radius: 2px;
+		padding: 5px 13px;
+	}
+
+	input[type="submit"] {
+		border: 1px solid #54ace8;
+		background-color: #fff;
+		border-radius: 2px;
+	}
+
+	.field-label {
+		float: right;
+	}
+
+	.pic-status, .name-status {
+		display: none;
+		color: #54ace8;
+		text-align: center;
+    	font-size: 15px;
+	}
+
+	.name-email-row, picture-row {
+		margin-top: 50px;
+	}
+
+	.picture-row {
+		margin-top: 50px;
+	}
+
+	.title {
+		text-align: center;
+		margin-top: 20px;
+		font-size: 37px;
+		color: #555;
+	}
+
+	.intro-text {
+		text-align: center;
+		font-size: 14px;
+	}
+}
+
+/* ########################## */
+/* # / Collaborator page      */
+/* ########################## */
 
 
 

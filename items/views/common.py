@@ -6,7 +6,7 @@ from items.forms import (
 import logging, json
 import requests
 
-from django.http import HttpResponseRedirect, HttpResponse, Http404
+from django.http import HttpResponseRedirect, HttpResponse, Http404, JsonResponse
 from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.core.urlresolvers import reverse
@@ -80,7 +80,7 @@ def add_item(request):
         return render_to_response('add_item.html', context)
         
         
-def install_bookmarklet(request, bookmarklet_key_id):
+def collaborator(request, bookmarklet_key_id):
 
     try:
         bookmarklet_key = BookmarkletKey.objects.get(key=bookmarklet_key_id)
@@ -96,22 +96,19 @@ def install_bookmarklet(request, bookmarklet_key_id):
 
     context = {'bookmarklet_key': bookmarklet_key_id,
                'organization': organization, 'bookmarklet_domain': bookmarklet_domain}
-    
-
-    
 
     if request.method == 'POST':
         profile_form = BookmarkletKeyForm(request.POST, request.FILES, prefix='profile', instance=bookmarklet_key)    
         if profile_form.is_valid():
 
-            print "form valid. saving"
             profile = profile_form.save()
 
-            return HttpResponseRedirect(reverse('common_install_bookmarklet', kwargs={'bookmarklet_key_id' : bookmarklet_key_id}))
+
+            return JsonResponse({'pic_url': profile.profile_pic.url})
         else:
             print "form not valid. try again, pal."
             context['form'] = profile_form
-            return render_to_response('install_bookmarklet.html', context)
+            return render_to_response('collaborator.html', context)
     
     else:        
         profile_form = BookmarkletKeyForm( prefix='profile', instance=bookmarklet_key)
@@ -121,4 +118,10 @@ def install_bookmarklet(request, bookmarklet_key_id):
     context['form'] = profile_form
     context = RequestContext(request, context)
     
-    return render_to_response('install_bookmarklet.html', context)
+    return render_to_response('collaborator.html', context)
+
+def collaborator_confirm(request, bookmarklet_key_id):
+    # Display the bookmarklet 
+
+    context = {'bookmarklet_key': bookmarklet_key_id}
+    return render_to_response('collaborator-confirm.html', context)
