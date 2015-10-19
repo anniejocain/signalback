@@ -1,31 +1,22 @@
-{% extends "layouts/base.html" %}
-{% load static bootstrap_tags %}
+{% extends "layouts/tray-base.html" %}
+{% load static %}
 {% get_static_prefix as STATIC_PREFIX %}
 
 {% block title %}Add item{% endblock title %}
 
 {% block content %}
 
-    <div class="container">
-        <h1>Add item to {{ organization.name }}</h1>
+    <div class="container add-item-tray">
         <div class="row">
             <div class="col-md-8">
-                <form method="post" action="">
-                    {% csrf_token %}
-                    {{ add_form|as_bootstrap }}
-					<label for="image-rep" class="control-label">
-						Image
-					</label>
-					<input class="" id="image-rep" name="image-rep" value="" type="hidden" />					
-		            <div id="gallery-container">
-		            	<div id="image-placeholder">
-							<img src="{{ STATIC_PREFIX }}img/spinner.gif">
-						</div>
-		            </div>
-                    <div class="form-actions">
-                        <input type="submit" value="Add" class="btn btn-primary btn-lg" />
+                <form class="form-inline" method="post" action="" id="submit-item">
+  					<div class="form-group">	
+                    	<textarea name="description" id="description" placeholder="So this was kinda interesting…"></textarea>
                     </div>
+                    <input type="submit" value="Add" class="btn btn-primary" />
                 </form>
+                <div id="signal-success" style="display:none;">Success!</div>
+                <div id="signal-failure" style="display:none;">Something went wrong</div>
             </div>
         </div>
     </div><!-- /.container -->
@@ -33,21 +24,27 @@
 
 {% endblock content %}
 {% block scripts %}
-<script src="{{ STATIC_PREFIX }}js/handlebars-v2.0.0.js"></script>
-
+<script type="text/javascript">
+	var CSRF_TOKEN = "{{ csrf_token }}"
+	title='{{title}}',
+	link='{{link}}',
+	bookmarklet_key='{{bookmarklet_key}}';
+</script>
 <script>
-	var org_slug = '{{org_slug}}';
-	var settings = {'url': '/api/item/search/?q=' + org_slug + '&format=json',
-		'gallery_create_url': '{% url 'common_get_gallery' %}',
-		'gallery_url': '{% url 'common_get_gallery' %}' + '?gallery_id='};
+$( document ).ready(function() {
+  
+  $( "#submit-item" ).submit(function( event ) {
+  var description = $('#description').val();
+  	$.post('/add-item-service/', {description: description, bookmarklet_key: bookmarklet_key, csrfmiddlewaretoken: CSRF_TOKEN, title: title, link: link}).done(function(data) {
+		$("#signal-success").fadeIn();
+  	setTimeout('parent.postMessage("loadMyOrders","*")', 750);
+		}).fail(function(data) {
+    		$("#signal-failure").fadeIn();
+    		});
+  	//parent.postMessage("loadMyOrders","*");
+  	return false;
+});
+
+});
 </script>
-<script src="{{ STATIC_PREFIX }}js/add.js"></script>
-
-<script id="image-template" type="text/x-handlebars-template">
-{% verbatim %}
-	<img src="{{path}}" id="{{id}}" class="gallery-image">
-</script>
-{% endverbatim %}
-
-
 {% endblock scripts %}
