@@ -45,39 +45,41 @@ def add_item(request):
     organization = bookmarklet_key.organization
     title = request.GET.get('title', '')
     link = request.GET.get('link', '')
-    description = request.GET.get('description', '')
     contributor = bookmarklet_key.display_name
     
-    if request.method == 'POST':
-        if not bookmarklet_key.is_active:
-            return render_to_response('bookmarklet_denied.html')
-            
-        add_form = AddItemForm(request.POST, prefix='additem')
-        
-        if add_form.is_valid():
-            bookmarklet_key.display_name = add_form.cleaned_data['contributor']
-            bookmarklet_key.save()
-            item = add_form.save(commit=False)
-            item.bookmarklet_key = bookmarklet_key
-            item.save()
-            
-            return HttpResponseRedirect(reverse('dashboard_display_items', kwargs={'slug' : organization.slug}))   
-        else:
-            context = {'add_form': add_form,} 
-            context = RequestContext(request, context)
-            return render_to_response('add_item.html', context)
-    
-    else:        
-        form_data = {'title':title, 
+    context = {'title':title, 
                 'link':link,
-                'description':description,
-                'contributor':contributor}
-        add_form = AddItemForm(initial=form_data, prefix='additem')
-        
-        context = {'add_form': add_form, 'organization': organization}           
-        context = RequestContext(request, context)
+                'bookmarklet_key':bookmarklet_key}
+    context = RequestContext(request, context)
     
-        return render_to_response('add_item.html', context)
+    return render_to_response('add_item.html', context)
+        
+
+def add_item_service(request):
+    """Item submitted"""
+    
+    bookmarklet_key_id = request.POST['bookmarklet_key']
+    try:
+        bookmarklet_key = BookmarkletKey.objects.get(key=bookmarklet_key_id)
+    except BookmarkletKey.DoesNotExist:
+        return render_to_response('bookmarklet_denied.html')
+    if not bookmarklet_key.is_active:
+        return render_to_response('bookmarklet_denied.html')
+        
+    title = request.POST["title"]
+    link = request.POST["link"]
+    description = request.POST["description"]
+    contributor = bookmarklet_key.display_name
+    
+    item = Item(bookmarklet_key=bookmarklet_key,
+    			title=title,
+                link=link,
+                description=description,
+                contributor=contributor,)
+    
+    item.save()
+    
+    return HttpResponse('success', status=200)
         
         
 def install_bookmarklet(request, bookmarklet_key_id):
@@ -122,3 +124,11 @@ def install_bookmarklet(request, bookmarklet_key_id):
     context = RequestContext(request, context)
     
     return render_to_response('install_bookmarklet.html', context)
+
+
+def bookmarklet(request, bookmarklet_key):
+    """The bookmarklet"""
+        
+    bookmarklet_domain = Site.objects.get_current().domain
+
+    return render_to_response('bookmarklet.js', {'bookmarklet_domain': bookmarklet_domain, 'bookmarklet_key': bookmarklet_key}, content_type='text/javascript')

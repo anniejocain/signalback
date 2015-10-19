@@ -192,119 +192,138 @@ h1, h2, h3, h4, h5, h6 {
           color: #444;
           margin-left: 0; }
 
-          @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003313}}
-          .dashboard-row {
-            margin-top: 35px;
-            margin-bottom: 35px; }
+          @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003304}}
+          .add-item-tray {
+            padding-top: 35px; }
 
-            @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003318}}
-            .dashboard-invite-new {
-              position: relative;
-              top: -5px;
-              text-transform: none; }
+            @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003308}}
+            .add-item-tray textarea {
+              font-size: 1.9rem;
+              line-height: 1.4;
+              letter-spacing: 0;
+              font-style: italic;
+              font-weight: 300;
+              width: 520px;
+              height: 38px;
+              padding: 6px 10px; }
 
-              @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003324}}
-              .contributors-list {
-                border-bottom: 1px solid #e89625;
-                margin-bottom: 25px; }
+              @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003319}}
+              .add-item-tray .btn {
+                margin-top: 0px; }
 
-                @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003329}}
-                .count-label, .listed-contributor-items span {
-                  font-size: 14px;
-                  margin-bottom: 0px;
-                  margin-top: 0px;
-                  color: #888;
-                  font-weight: 400; }
+                @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003332}}
+                .dashboard-row {
+                  margin-top: 35px;
+                  margin-bottom: 35px; }
 
                   @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003337}}
-                  .count-number {
-                    font-size: 48px;
-                    font-weight: 500;
-                    line-height: 1.1em;
-                    color: #555; }
+                  .dashboard-invite-new {
+                    position: relative;
+                    top: -5px;
+                    text-transform: none; }
 
-                    @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003344}}
-                    .listed-contributor {
-                      border-top: 1px solid #e89625;
-                      background-color: #fffff7; }
+                    @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003343}}
+                    .contributors-list {
+                      border-bottom: 1px solid #e89625;
+                      margin-bottom: 25px; }
 
-                      @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003349}}
-                      .listed-contributor-email {
-                        padding-top: 15px;
-                        padding-bottom: 15px;
-                        height: 75px; }
+                      @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003348}}
+                      .count-label, .listed-contributor-items span {
+                        font-size: 14px;
+                        margin-bottom: 0px;
+                        margin-top: 0px;
+                        color: #888;
+                        font-weight: 400; }
 
-                        @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003355}}
-                        .listed-contributor-items {
-                          font-size: 32px;
-                          padding-top: 10px;
-                          padding-bottom: 15px; }
+                        @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003356}}
+                        .count-number {
+                          font-size: 48px;
+                          font-weight: 500;
+                          line-height: 1.1em;
+                          color: #555; }
 
-                          @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003361}}
-                          .listed-contributor-items span {
-                            margin-left: 5px;
-                            display: inline-block; }
+                          @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003363}}
+                          .listed-contributor {
+                            border-top: 1px solid #e89625;
+                            background-color: #fffff7; }
 
-                            @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003366}}
-                            .listed-contributor-active {
-                              font-size: 14px;
-                              padding-top: 30px;
-                              color: #888; }
+                            @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003368}}
+                            .listed-contributor-email {
+                              padding-top: 15px;
+                              padding-bottom: 15px;
+                              height: 75px; }
 
-                              @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003372}}
-                              .listed-contributor-email button {
-                                display: none;
-                                margin-top: 4px; }
+                              @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003374}}
+                              .listed-contributor-items {
+                                font-size: 32px;
+                                padding-top: 10px;
+                                padding-bottom: 15px; }
 
-                                @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003377}}
-                                .listed-contributor:hover small {
-                                  display: none; }
+                                @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003380}}
+                                .listed-contributor-items span {
+                                  margin-left: 5px;
+                                  display: inline-block; }
 
-                                  @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003381}}
-                                  .listed-contributor small {
-                                    display: block; }
+                                  @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003385}}
+                                  .listed-contributor-active {
+                                    font-size: 14px;
+                                    padding-top: 30px;
+                                    color: #888; }
 
-                                    @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003385}}
-                                    .listed-contributor:hover button {
-                                      display: block; }
+                                    @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003391}}
+                                    .listed-contributor-email button {
+                                      display: none;
+                                      margin-top: 4px; }
 
-                                      @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003392}}
-                                      #gallery-container {
-                                        height: 250px;
-                                        padding: 10px 0; }
+                                      @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003396}}
+                                      .listed-contributor:hover small {
+                                        display: none; }
 
-                                        @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003397}}
-                                        #gallery-container img {
-                                          max-height: 200px;
-                                          margin-right: 20px;
-                                          border: 1px solid #ddd;
-                                          cursor: pointer; }
+                                        @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003400}}
+                                        .listed-contributor small {
+                                          display: block; }
 
                                           @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003404}}
-                                          #gallery-container .selected-image {
-                                            border-bottom: 8px solid #dddbff;
-                                            cursor: default; }
+                                          .listed-contributor:hover button {
+                                            display: block; }
 
-                                            @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003409}}
-                                            #gallery-container .selectable-image {
-                                              border-bottom: 8px solid #ddd; }
+                                            @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003411}}
+                                            #gallery-container {
+                                              height: 250px;
+                                              padding: 10px 0; }
 
-                                              @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003413}}
-                                              #gallery-container .selectable-image:hover {
-                                                border-bottom: 8px solid #b9e3ff; }
+                                              @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003416}}
+                                              #gallery-container img {
+                                                max-height: 200px;
+                                                margin-right: 20px;
+                                                border: 1px solid #ddd;
+                                                cursor: pointer; }
 
-                                                @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003417}}
-                                                #gallery-container #image-placeholder {
-                                                  height: 200px;
-                                                  width: 200px;
-                                                  border: solid #bbb 1px; }
+                                                @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003423}}
+                                                #gallery-container .selected-image {
+                                                  border-bottom: 8px solid #dddbff;
+                                                  cursor: default; }
 
-                                                  @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003423}}
-                                                  #gallery-container #image-placeholder p {
-                                                    font-size: 13px; }
+                                                  @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003428}}
+                                                  #gallery-container .selectable-image {
+                                                    border-bottom: 8px solid #ddd; }
 
-                                                    @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003427}}
-                                                    #gallery-container #image-placeholder img {
-                                                      margin: 80px 85px;
-                                                      border: none;
-                                                      cursor: default; }
+                                                    @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003432}}
+                                                    #gallery-container .selectable-image:hover {
+                                                      border-bottom: 8px solid #b9e3ff; }
+
+                                                      @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003436}}
+                                                      #gallery-container #image-placeholder {
+                                                        height: 200px;
+                                                        width: 200px;
+                                                        border: solid #bbb 1px; }
+
+                                                        @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003442}}
+                                                        #gallery-container #image-placeholder p {
+                                                          font-size: 13px; }
+
+                                                          @media -sass-debug-info{filename{font-family:file\:\/\/\/srv\/www\/html\/dev\/annie\/signalback\/items\/static\/css\/style\.scss}line{font-family:\00003446}}
+                                                          #gallery-container #image-placeholder img {
+                                                            margin: 80px 85px;
+                                                            border: none;
+                                                            cursor: default; }

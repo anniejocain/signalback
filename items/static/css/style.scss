@@ -297,9 +297,28 @@ pre {
 
 
 
+/* ########################## */
+/* # Add item tray            */
+/* ########################## */
 
+.add-item-tray {
+	padding-top:35px;
+}
 
+.add-item-tray textarea {
+    font-size: 1.9rem;
+    line-height: 1.4;
+    letter-spacing: 0;
+    font-style: italic;
+    font-weight: 300;
+    width:520px;
+    height:38px;
+    padding:6px 10px;
+}
 
+.add-item-tray .btn {
+	margin-top:0px;
+}
 
 /* ########################## */
 /* # Old Stuff                */

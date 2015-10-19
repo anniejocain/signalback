@@ -9,7 +9,8 @@ class AddItemForm(forms.ModelForm):
 
     class Meta:
         model = Item
-        exclude = ('contributed_date', 'bookmarklet_key')
+        #exclude = ('contributed_date', 'bookmarklet_key')
+        fields = ["description"]
 
 
 
