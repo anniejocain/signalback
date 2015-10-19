@@ -6,3 +6,4 @@ signalback/local_settings.py
 .DS_Store
 ghostdriver.log
 bin/phantomjs
+items/static/css/style.css 

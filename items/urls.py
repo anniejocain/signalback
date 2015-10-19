@@ -15,14 +15,9 @@ urlpatterns = patterns('items.views',
     # Common Pages
     url(r'^$', 'common.landing', name='common_landing'),
     url(r'^add-item?$', 'common.add_item', name='add_item'),
-<<<<<<< HEAD
+    url(r'^add-item-service/?$', 'common.add_item_service', name='add_item_service'),
     url(r'^collaborator/(?P<bookmarklet_key_id>[a-zA-Z0-9\-]+)/$', 'common.collaborator', name='common_collaborator'),
     url(r'^collaborator/(?P<bookmarklet_key_id>[a-zA-Z0-9\-]+)/confirm/$', 'common.collaborator_confirm', name='common_collaborator_confirm'),
-=======
-    url(r'^add-item-service/?$', 'common.add_item_service', name='add_item_service'),
-    url(r'^install-bookmarklet/(?P<bookmarklet_key_id>[a-zA-Z0-9\-]+)/$', 'common.install_bookmarklet', name='common_install_bookmarklet'),
-    url(r'^bookmarklet/(?P<bookmarklet_key>[a-zA-Z0-9\-]+)/$', 'common.bookmarklet', name='common_bookmarklet'),
->>>>>>> de60143be998d345c6704dc507264b06345bc4ad
     
     # Organization Pages
     url(r'^dashboard/$', 'dashboard.landing', name='dashboard_landing'),
