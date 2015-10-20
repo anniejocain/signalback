@@ -1,4 +1,5 @@
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
+from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.conf import settings
 from django.db import models
 
@@ -22,7 +23,7 @@ class BookmarkletKey(models.Model):
     is_active = models.BooleanField(default=True)
     email = models.EmailField(max_length=254, null=True, blank=True)
     display_name = models.CharField(max_length=400, null=True, blank=True)
-    profile_pic = models.ImageField(upload_to='profile-pics', null=True, blank=True)
+    profile_pic = models.ImageField(upload_to='profile-pics', default=static('img/anon.jpg'))
 
     def save(self, *args, **kwargs):
         """

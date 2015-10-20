@@ -8,10 +8,11 @@ import requests
 
 from django.http import HttpResponseRedirect, HttpResponse, Http404, JsonResponse
 from django.template import RequestContext
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, render
 from django.core.urlresolvers import reverse
 from django.core.context_processors import csrf
 from django.contrib.sites.models import Site
+from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt
 
@@ -104,23 +105,19 @@ def collaborator(request, bookmarklet_key_id):
         if profile_form.is_valid():
 
             profile = profile_form.save()
-
-
+                
             return JsonResponse({'pic_url': profile.profile_pic.url})
         else:
-            print "form not valid. try again, pal."
             context['form'] = profile_form
-            return render_to_response('collaborator.html', context)
+            return render('collaborator.html', context)
     
-    else:        
+    else:
         profile_form = BookmarkletKeyForm( prefix='profile', instance=bookmarklet_key)
-        
 
 
     context['form'] = profile_form
     context = RequestContext(request, context)
     
-<<<<<<< HEAD
     return render_to_response('collaborator.html', context)
 
 def collaborator_confirm(request, bookmarklet_key_id):
@@ -128,9 +125,6 @@ def collaborator_confirm(request, bookmarklet_key_id):
 
     context = {'bookmarklet_key': bookmarklet_key_id}
     return render_to_response('collaborator-confirm.html', context)
-=======
-    return render_to_response('install_bookmarklet.html', context)
-
 
 def bookmarklet(request, bookmarklet_key):
     """The bookmarklet"""
@@ -138,4 +132,3 @@ def bookmarklet(request, bookmarklet_key):
     bookmarklet_domain = Site.objects.get_current().domain
 
     return render_to_response('bookmarklet.js', {'bookmarklet_domain': bookmarklet_domain, 'bookmarklet_key': bookmarklet_key}, content_type='text/javascript')
->>>>>>> de60143be998d345c6704dc507264b06345bc4ad

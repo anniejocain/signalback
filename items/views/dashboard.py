@@ -56,19 +56,23 @@ def generate_key(request):
         bookmarkletKey.save()
         displayKey = bookmarkletKey.key
         
+        bookmarkletLink = reverse('common_collaborator', kwargs={'bookmarklet_key_id': bookmarkletKey})
+
         host = request.get_host()
-        bookmarkletLink = 'http://{host}/install-bookmarklet/{bookmarklet_key}'.format(host=host ,bookmarklet_key=displayKey)
 
         if settings.DEBUG == False:
             host = settings.HOST
+
+        # TODO: Feels like there should be a better way, more django way, to build this url
+        bookmarkletLink = "http://%s%s" % (host, bookmarkletLink)
         
         content = '''{organization} has invited you to contribute links. Install a bookmarklet here.
             
-http://{host}/install-bookmarklet/{bookmarklet_key}
+http://{bookmarklet_link}
                     
 Go for it!
                 
-'''.format(organization=org.name, host=host ,bookmarklet_key=displayKey)
+'''.format(organization=org.name ,bookmarklet_link=bookmarkletLink)
         
         logger.debug(content)
         

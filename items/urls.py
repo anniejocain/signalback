@@ -18,6 +18,7 @@ urlpatterns = patterns('items.views',
     url(r'^add-item-service/?$', 'common.add_item_service', name='add_item_service'),
     url(r'^collaborator/(?P<bookmarklet_key_id>[a-zA-Z0-9\-]+)/$', 'common.collaborator', name='common_collaborator'),
     url(r'^collaborator/(?P<bookmarklet_key_id>[a-zA-Z0-9\-]+)/confirm/$', 'common.collaborator_confirm', name='common_collaborator_confirm'),
+    url(r'^bookmarklet/(?P<bookmarklet_key>[a-zA-Z0-9\-]+)/$', 'common.bookmarklet', name='common_bookmarklet'),
     
     # Organization Pages
     url(r'^dashboard/$', 'dashboard.landing', name='dashboard_landing'),

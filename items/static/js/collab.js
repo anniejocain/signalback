@@ -21,6 +21,7 @@ function upload(event) {
                 $('.pic-status').show();
             } else {
                 $('.name-status').show();
+
             }
         }
     });
@@ -42,5 +43,9 @@ $(function() {
 
 
 $( ".collaborator img" ).click(function() {
-  $( ".upload-pic-button" ).click();
+    $( ".upload-pic-button" ).click();
+});
+
+$("input:submit").click(function() {
+    $('.bookmarklet-install-button').show();
 });

@@ -42,11 +42,7 @@
             {{ form.non_field_errors }}
                 <div class="row picture-row">
                     <div class="col-sm-6">
-                        {% if form.instance.profile_pic %}
-                            <img src="{{ form.instance.profile_pic.url }}">
-                        {% else %}
-                            <img src="{{ STATIC_PREFIX }}img/stock-woman.jpg">
-                        {% endif %}
+                        <img src="{{ form.instance.profile_pic.url }}">
                     </div>
                     <div class="col-sm-6">
                         {{ form.profile_pic.errors }}
@@ -80,6 +76,17 @@
 
             </div> <!-- row -->
         </form>
+
+        <div class="row">
+                <div class="col-sm-12">
+
+                    <div class="bookmarklet-install-button">
+                        <p class="title">You're ready to share!</p>
+                        <a id="bookmarklet" class="btn btn-success btn-lg" href="javascript:(function()%7Bif(window.myBookmarklet!%3D%3Dundefined)%7BmyBookmarklet()%3B%7Delse%7Bdocument.body.appendChild(document.createElement(%27script%27)).src%3D%27http://{{bookmarklet_domain}}/bookmarklet/{{bookmarklet_key}}/%3F%27%3B%7D%7D)()%3B">SignalBack</a> <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Drag this button into your browser toolbar</div>
+                </div>
+
+            </div> <!-- row -->
+        
     </div><!-- /.container -->
 
     
