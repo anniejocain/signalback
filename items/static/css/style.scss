@@ -1,13 +1,13 @@
-$heading_font = 'Montserrat', sans-serif;
-$body_font = 'Lato', sans-serif;
+$heading_font : 'Montserrat', sans-serif;
+$body_font : 'Lato', sans-serif;
 
-$background_gray = #fdfdfc;
-$light-cyan = #eaf5fc;
-$cyan = #54ace8;
-$red = #ef524b;
-$pink = #f49deb;
-$dark_gray = #94a5ca;
-$green = #58c361;
+$background_gray : #fdfdfc;
+$light-cyan : #eaf5fc;
+$cyan : #54ace8;
+$red : #ef524b;
+$pink : #f49deb;
+$dark_gray : #94a5ca;
+$green : #58c361;
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $heading_font;
