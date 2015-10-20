@@ -44,11 +44,11 @@ def add_item(request):
     if not bookmarklet_key.is_active:
         return render_to_response('bookmarklet_denied.html')
     organization = bookmarklet_key.organization
-    title = request.GET.get('title', '')
+    description = request.GET.get('description', '')
     link = request.GET.get('link', '')
     contributor = bookmarklet_key.display_name
     
-    context = {'title':title, 
+    context = {'description':description, 
                 'link':link,
                 'bookmarklet_key':bookmarklet_key}
     context = RequestContext(request, context)
@@ -67,13 +67,12 @@ def add_item_service(request):
     if not bookmarklet_key.is_active:
         return render_to_response('bookmarklet_denied.html')
         
-    title = request.POST["title"]
+    description = request.POST["description"]
     link = request.POST["link"]
     description = request.POST["description"]
     contributor = bookmarklet_key.display_name
     
     item = Item(bookmarklet_key=bookmarklet_key,
-    			title=title,
                 link=link,
                 description=description,
                 contributor=contributor,)

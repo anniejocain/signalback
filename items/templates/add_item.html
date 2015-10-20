@@ -26,7 +26,7 @@
 {% block scripts %}
 <script type="text/javascript">
 	var CSRF_TOKEN = "{{ csrf_token }}"
-	title='{{title}}',
+	description='{{description}}',
 	link='{{link}}',
 	bookmarklet_key='{{bookmarklet_key}}';
 </script>
@@ -35,7 +35,7 @@ $( document ).ready(function() {
   
   $( "#submit-item" ).submit(function( event ) {
   var description = $('#description').val();
-  	$.post('/add-item-service/', {description: description, bookmarklet_key: bookmarklet_key, csrfmiddlewaretoken: CSRF_TOKEN, title: title, link: link}).done(function(data) {
+  	$.post('/add-item-service/', {description: description, bookmarklet_key: bookmarklet_key, csrfmiddlewaretoken: CSRF_TOKEN, description: description, link: link}).done(function(data) {
 		$("#signal-success").fadeIn();
   	setTimeout('parent.postMessage("loadMyOrders","*")', 750);
 		}).fail(function(data) {

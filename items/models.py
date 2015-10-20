@@ -1,10 +1,10 @@
+import uuid
+from urlparse import urlparse
+
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.conf import settings
 from django.db import models
-
-import uuid
-
 
 class Organization(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
@@ -89,11 +89,23 @@ class SBUser(AbstractBaseUser):
     
 class Item(models.Model):
     bookmarklet_key = models.ForeignKey(BookmarkletKey)
-    title = models.CharField(max_length=400)
     description = models.CharField(max_length=117, null=True, blank=True)
     link = models.URLField(max_length=2000, null=True, blank=True)
+    short_link = models.CharField(max_length=1000, null=True, blank=True)
     contributor = models.CharField(max_length=400, null=True, blank=True)
     contributed_date = models.DateTimeField(auto_now=True)
+
+    def save(self, *args, **kwargs):
+        """
+        It's helpful to trim down the link to just the TLD. Let's do
+        that when we save a new item
+        """
+
+        if not self.short_link:
+            link_pieces = urlparse(self.link)
+            self.short_link = link_pieces.netloc
+        
+        super(Item, self).save(*args, **kwargs)
         
     def __unicode__(self):
         return self.title

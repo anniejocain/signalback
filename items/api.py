@@ -35,12 +35,12 @@ class ItemResource(ModelResource):
         for o in objects:
             
             
-            stripped_object = { 'title': o.title,
-                                'description': o.description,
+            stripped_object = { 'description': o.description,
                                 'link': o.link,
+                                'short_link': o.short_link,
                                 'contributor': o.contributor,
                                 'contributed_date': o.contributed_date,
-                                'profile_pic': "%s%s" % (settings.MEDIA_URL, o.bookmarklet_key.profile_pic)
+                                'profile_pic': "%s%s" % (settings.MEDIA_URL, o.bookmarklet_key.profile_pic),
                                 }
             object_list.append(stripped_object)
 
