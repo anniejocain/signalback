@@ -10,7 +10,7 @@ $(document).ready(function(){
     request.done(function(data) {
     	var source = $("#item-template").html();
     	var template = Handlebars.compile(source);
-        $('#item-container').html(template({'item': data}));
+        $('.item-row-container').html(template({'item': data}));
     	
 
     });

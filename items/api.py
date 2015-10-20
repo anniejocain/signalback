@@ -1,4 +1,5 @@
 from items.models import Item
+from django.conf import settings
 
 from django.conf.urls import url
 
@@ -34,16 +35,12 @@ class ItemResource(ModelResource):
         for o in objects:
             
             
-            thumbnail = ''
-            if o.itemimage_set.first():
-                thumbnail = o.itemimage_set.first().item_image.url
-            
             stripped_object = { 'title': o.title,
                                 'description': o.description,
                                 'link': o.link,
                                 'contributor': o.contributor,
                                 'contributed_date': o.contributed_date,
-                                'thumbnail': thumbnail,
+                                'profile_pic': "%s%s" % (settings.MEDIA_URL, o.bookmarklet_key.profile_pic)
                                 }
             object_list.append(stripped_object)
 

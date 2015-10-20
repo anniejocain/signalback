@@ -6,17 +6,20 @@
 	{% compressed_css 'items' %}
 {% endblock styles %}
 
-
 {% block title %}Items{% endblock title %}
 
 {% block content %}
-	<div class="items">
-	    <div class="container">
-	        <h1>All your items</h1>
-			<div id="item-container"></div>
-	    </div><!-- /.container -->
-	</div>
-
+	<div class="container items-page">
+		<div class="row">
+			<div class="post-padding">
+				<div class="skew">	
+					<h1>ITEMS</h1>
+				</div>
+			</div>
+		</div>
+		<div class="item-row-container">
+		</div>
+    </div> <!-- container -->
 {% endblock content %}
 
 {% block scripts %}
@@ -24,28 +27,24 @@
 	<script>
 		var org_slug = '{{org_slug}}';
 		var settings = {'url': '/api/v0.2/item/search/?q=' + org_slug};
-		
-	
 	</script>
 	<script src="{{ STATIC_PREFIX }}js/item.js"></script>
-	
 	
 	<script id="item-template" type="text/x-handlebars-template">
 	{% verbatim %}
 		{{#each item}}
-			<div class="row single-item-container">
-				<div class="col-xs-8">	
-					<p><a href="{{link}}" target="_blank">{{title}}</a></p>
-					<p>{{description}}</p>
-					<p>{{contributor}}</p>
-					<p>{{contributed_date}}</p>
+			<div class="row">
+				<div class="two columns post-padding">
+					<div class="crop-mug">
+						<img src="{{profile_pic}}" class="rounded" />
+					</div>
 				</div>
-				<div class="col-xs-4">
-					<a href="{{link}}" target="_blank"><img src="{{thumbnail}}" width=300></a>
+				<div class="ten columns post-padding">
+					<h4>{{description}}<span class="posted-by">{{contributor}}</span></h4>
+					<p class="source"><a href="{{link}}">extractTLD.here</a></p>
 				</div>
-			</div>
+			</div> <!-- row -->
 		{{/each}}	
 	</script>
 	{% endverbatim %}
 {% endblock scripts %}
-

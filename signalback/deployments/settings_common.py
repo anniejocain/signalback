@@ -84,7 +84,8 @@ PIPELINE_JS = {}
 PIPELINE_CSS = {
     'common': {
         'source_filenames': (
-            'css/bootstrap.min.css',
+            'css/normalize.css',
+            'css/skeleton.css',
             'css/style.scss',
         ),
         'output_filename': 'css/common-bundle.css',
