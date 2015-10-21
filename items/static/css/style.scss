@@ -626,6 +626,7 @@ background-position: 0 0, 15px 15px;
 	}
 
 	textarea, 
+	#description,
 	.button.button-primary, 
 	button.button-primary, 
 	input[type="submit"].button-primary, 
@@ -637,13 +638,14 @@ background-position: 0 0, 15px 15px;
   		background-color: #fff;
 	}
 
-	textarea {
+	textarea, #description {
 		font-size: 1.9rem; 
 		line-height: 1.4;  
 		letter-spacing: 0;
 		font-style: italic;
 		font-weight: 300;
 		min-height: 35px;
+		margin-top:0px;
 	}
 
 	input[type="submit"].button-primary {	
