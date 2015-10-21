@@ -1,4 +1,4 @@
-{% extends "layouts/tray-base.html" %}
+{% extends "layouts/base.html" %}
 {% load static %}
 {% get_static_prefix as STATIC_PREFIX %}
 
@@ -6,21 +6,35 @@
 
 {% block content %}
 
-    <div class="container add-item-tray">
-        <div class="row">
-            <div class="col-md-8">
-                <form class="form-inline" method="post" action="" id="submit-item">
-  					<div class="form-group">	
-                    	<textarea name="description" id="description" placeholder="So this was kinda interesting…"></textarea>
-                    </div>
-                    <input type="submit" value="Add" class="btn btn-primary" />
-                </form>
-                <div id="signal-success" style="display:none;">Success!</div>
-                <div id="signal-failure" style="display:none;">Something went wrong</div>
-            </div>
-        </div>
-    </div><!-- /.container -->
-
+<div class="tray">
+  <div class="container">
+	<div class="row">
+    </div>
+    
+  <div class="row tray-row-correction">
+	  <form method="post" action="" id="submit-item">
+    <div class="two columns">
+        <div class="crop-mug">
+			<img src="{{bookmarklet_key.profile_pic}}" class="rounded"/>
+		</div>
+		{% comment %}<div class="text-background shadow">
+			<label>
+		  		<input type="checkbox"><span class="label-body">ANONYMIZE</span>
+		  	</label>
+	  	</div>{% endcomment %}
+      </div>
+    <div class="eight columns">
+      <label for="exampleMessage"></label>
+	  <textarea class="u-full-width shadow" placeholder="So this was kinda interesting…" name="description" id="description"></textarea>
+	  <p class="source shadow tray-source"><a href="http://www.getskeleton.com">www.getskeleton.com</a></p>
+	</div>
+    <div class="two columns">
+	  <input class="button-primary shadow" type="submit" value="Interesting">
+	  <div id="signal-success" style="display:none;">SUCCESS!</div>
+    </div>
+    </form>    
+  </div>
+  </div>
 
 {% endblock content %}
 {% block scripts %}
@@ -32,6 +46,14 @@
 </script>
 <script>
 $( document ).ready(function() {
+var short_link = document.createElement('a');
+
+//  set href to any path
+short_link.setAttribute('href', link);
+$('.tray-source a').attr('href', short_link.hostname).text(short_link.hostname);
+
+//  cleanup for garbage collection
+short_link = null;
   
   $( "#submit-item" ).submit(function( event ) {
   var description = $('#description').val();

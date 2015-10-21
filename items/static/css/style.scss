@@ -558,10 +558,31 @@ pre {
 
 /*testing testing, 1 2 3*/
 
-.items-page {
+.tray {
+background-color:#fff;
+background-image: radial-gradient($light-cyan 21%, transparent 26%),
+radial-gradient($light-cyan 21%, transparent 26%);
+background-size:30px 30px;
+background-position: 0 0, 15px 15px;
+}
+
+.tray #signal-success {
+	margin-left:0px;
+	font-size:1.5rem;
+	padding:7px 0px 4px 0px;
+	color:$green;
+	font-weight:bold;
+	text-align:center;
+	text-shadow:
+   -1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+     1px 1px 0 #fff;
+}
+
+.items-page, .tray {
 	.post-padding {
 		margin-bottom:20px;
-		
 	}
 
 	.crop-mug {
@@ -611,6 +632,8 @@ pre {
 	input[type="button"].button-primary  {
 		border-color:white;
 		border-radius: 0px;	
+		color: #000;
+  		background-color: #fff;
 	}
 
 	textarea {
@@ -619,11 +642,13 @@ pre {
 		letter-spacing: 0;
 		font-style: italic;
 		font-weight: 300;
+		min-height: 35px;
 	}
 
 	input[type="submit"].button-primary {	
 		font-family: 'Open Sans Condensed';
 		font-size:12px;
+		margin-bottom:0px;
 	}
 
 	.shadow {
