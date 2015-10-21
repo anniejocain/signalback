@@ -10,10 +10,7 @@ django-tastypie==0.12.2
 django-forms-bootstrap==3.0.1
 Pillow==3.0.0
 kombu==3.0.24
-billiard==3.3.0.19 #Do we need this? It seems to be tied to Celery/Kombu?
 pytz==2014.9
-beautifulsoup4==4.3.2
-requests==2.4.3
 Werkzeug==0.9.6
 Fabric==1.10.0
 selenium==2.45.0
